@@ -1,90 +1,67 @@
-# intellmesite
-Landing Site Page for InTellMe
+# InTellMe — parent company site
 
-## Overview
-A modern tech portfolio website showcasing InTellMe and its innovative ventures.
+The public site for InTellMe: evidence-governed research, verification, and decision
+infrastructure. Dark, static, and built to be read by investors and program officers.
 
-## Features
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Modern UI**: Clean, professional design with smooth animations
-- **Portfolio Showcase**: Highlights eleven key ventures:
-  - [LinkTrackr](https://linktrackr.intellmeai.com) - Ultimate one-link analytics dashboard
-  - [ContractShrink](https://contractshrink.intellmeai.com) - AI-powered legal document summarization
-  - [SEOPlumber](https://seoplumber.intellmeai.com) - Automated broken link checker and SEO health monitor
-  - [FormSight](https://formsight.intellmeai.com) - Generate complex forms using natural language AI
-  - [EventPulse](https://eventpulse.intellmeai.com) - Real-time RSVP tracking and event analytics
-  - [Yoohoo.Guru](https://www.yoohoo.guru) - Community skill-sharing and local services platform
-  - [The wAether App](https://www.waether.space) - Beautiful, minimalist weather forecasting
-  - [OMFG](https://www.intellmeai.com/probot) - Oh My Forking Git - Automated fork monitoring
-  - [SAVR](https://savr.cam) - AI-powered personalized meal planning
-  - [Golden Goose Tees](https://www.goldengoosetees.com) - Premium custom apparel service
-  - [Pink Pickle Rodeo](https://www.pinkpicklerodeo.lol) - Whimsical digital entertainment experience
+Live: https://www.intellmeai.com
 
-## Technologies Used
-- HTML5
-- CSS3 (with modern features like CSS Grid, Flexbox, and animations)
-- Vanilla JavaScript (smooth scrolling, intersection observer)
+## Stack
 
-## Styling & Theme
+Astro, static output, no client framework. The only JavaScript shipped is
+`public/atmosphere.js` — sticky-nav state, the mobile drawer's focus trap, a scroll
+reveal, and an optional cursor trace. Every route renders complete content with
+JavaScript disabled.
 
-This site uses a premium, sophisticated design aesthetic inspired by [Lane Vector](https://www.lanevector.com), a research initiative by Michael Brandon Lane focused on mathematical foundations of behavioral and temporal dynamics. The design emphasizes professionalism, clarity, and elegance.
+- Fonts are self-hosted and subset in `public/assets/fonts/`. No `fonts.googleapis.com`.
+- All imagery is local. **No runtime requests to Cloudinary or any other origin.**
+- One CSS system: `src/styles/tokens.css`, `site.css`, `rooms.css`.
 
-### Color Palette
-- **Primary Background**: `#08071c` (dark indigo blue) - A rich, deep background that exudes sophistication
-- **Primary Text**: `#ffffff` (white) - Clean, high-contrast text for optimal readability
-- **Accent Color**: `#db0d0d` (orange-red) - Strategic use for CTAs and highlights
-- **Particle Network**: Cyan particles `rgba(6, 182, 212)` - Animated kinematic background
-- **Supporting Colors**: Slate/blue tones for secondary elements
+## Commands
 
-### Typography
-- **Headings**: Georgia, Times New Roman (serif fonts) - Elegant, timeless typography for titles and headings
-- **Body Text**: Helvetica Neue, Arial (sans-serif) - Clean, modern fonts for optimal readability
-- **No External Fonts**: Uses system fonts only for optimal performance and fast loading
-
-### Kinematic Particle Network Background
-The site features an animated particle network background that matches Lane Vector's aesthetic:
-- **80 Animated Particles**: Cyan-colored nodes that move smoothly across the canvas
-- **Dynamic Connections**: Lines automatically form between nearby particles, creating a network effect
-- **Mouse Interaction**: Particles respond to cursor movement, creating an interactive experience
-- **Physics-Based Animation**: Smooth, natural movement with boundary collision detection
-- **Performance Optimized**: Canvas-based rendering at 60fps with minimal CPU impact
-
-### Design Principles
-- Premium dark theme with sophisticated color palette
-- Generous spacing and professional layout
-- Smooth animations and transitions
-- Kinematic particle network background for depth and visual interest
-- Responsive design optimized for all devices
-- Accessible design following WCAG guidelines
-
-## Local Development
-Simply open `index.html` in a web browser or run a local server:
-
-```bash
-python3 -m http.server 8080
+```
+npm install
+npm run dev      # local dev server
+npm run build    # static build into dist/
+npm run preview  # serve the build
+npm run check    # Astro + TypeScript diagnostics
 ```
 
-Then visit `http://localhost:8080` in your browser.
+## Routes
 
-## SEO & Search Optimization
+| Route | File |
+|-------|------|
+| `/` | `src/pages/index.astro` |
+| `/investors` | `src/pages/investors.astro` |
+| `/investor-request-received` | `src/pages/investor-request-received.astro` |
+| `/privacy` `/terms` `/refunds` | `src/pages/*.astro` via `src/layouts/Legal.astro` |
+| `/404` | `src/pages/404.astro` |
+| `POST /api/investor-request` | `api/investor-request.js` (Vercel function) |
 
-The site includes comprehensive SEO features:
-- **Sitemap**: XML sitemap available at [https://www.intellmeai.com/sitemap.xml](https://www.intellmeai.com/sitemap.xml)
-- **Robots.txt**: Properly configured robots.txt with sitemap reference
-- **Meta Tags**: Complete meta descriptions, keywords, and Open Graph tags
-- All pages are indexed and optimized for search engines
+## Investor request form
 
-## Security & HTTPS
+A plain HTML POST, so it works without JavaScript. Configure in the Vercel project:
 
-This site implements security best practices including:
-- HTTPS enforcement (configuration files for various hosting platforms included)
-- Content Security Policy (CSP)
-- Security headers (HSTS, X-Frame-Options, X-Content-Type-Options, etc.)
-- Security.txt for responsible disclosure
+| Variable | Required | Default |
+|----------|----------|---------|
+| `RESEND_API_KEY` | yes | — |
+| `INVESTOR_INBOX` | no | `brandon@intellmeai.com` |
+| `INVESTOR_FROM` | no | `InTellMe <no-reply@intellmeai.com>` |
 
-For deployment instructions with HTTPS configuration, see [DEPLOYMENT.md](DEPLOYMENT.md).
+Without `RESEND_API_KEY` the endpoint returns 503 and points the sender at the direct
+email address. It never accepts a request it cannot deliver.
 
-## Contact
-- Website: [www.intellmeai.com](https://www.intellmeai.com)
-- Email: contact@intellmeai.com
-- Security: security@intellmeai.com
+## House rules
+
+These are enforced by the design specification and should stay true:
+
+- Dark only. No light-mode toggle.
+- Champagne is jewelry, not paint — under about 2% of any viewport.
+- Status badges use the exact language in the specification. No traffic-light colours.
+- Validation is called validation. Pilots are called pilots. Nothing is described as
+  production-proven, fraud-predictive, or commercially validated.
+- The public portfolio is: InTellMe → TruVector, ResearchOne → SAVR, Golden Goose
+  Tools, Golden Goose Studio → wAether. Nothing else appears in nav, footer, sitemap,
+  or meta.
+- Never use the nav label "Our Apps."
+
+Open items are tracked in [HOLDS.md](./HOLDS.md).
