@@ -142,6 +142,62 @@ must be added with SPF and DKIM before this delivers. Add DMARC at the same time
 
 ---
 
+## Closed in the fourth pass — verification before the pull request
+
+### The request form could strand a person — **CLOSED**
+The form is a plain HTML POST so it works without JavaScript, but every failure
+path answered with raw JSON. A visitor who mistyped an email landed on a blank
+page showing `{"error":...}` at a dead URL, with no way back and their typing
+gone. On the one page whose entire purpose is to be contacted, that was the worst
+defect in the branch. Failures now answer in the format the client asked for: a
+browser gets a readable page in the site's own type and colour, saying what
+happened, linking back to the form, and giving the direct email address.
+
+### The form could silently discard a real request — **CLOSED**
+Any submission completed in under 2.5 seconds was dropped with a `204`, which a
+browser renders as nothing happening at all. Browser autofill routinely fills a
+name-and-email form faster than that, so a legitimate investor using autofill
+could be discarded without either party knowing — while the file's own header
+claimed it never silently drops a request. Speed is now treated as a signal
+rather than a verdict: the message is delivered and flagged `[fast submission]`
+so the reader can weigh it. The hidden honeypot field still discards, because a
+person cannot fill a field they cannot see, and it now answers exactly as success
+does so a bot learns nothing.
+
+### The accessibility page promised contrast the site did not meet — **CLOSED**
+`/accessibility` states a 4.5:1 minimum. Measured against the three page grounds,
+three tokens missed it. The error colour was the serious one at **2.68:1** — used
+as the border of an invalid form field, it failed even the 3:1 floor that applies
+to a control's boundary, and it was the only cue that a field was wrong. A
+published accessibility promise the site does not keep is the same FTC Act § 5
+exposure as an unkept privacy promise, on the page most likely to be read by
+someone looking for a claim. The error colour is now `#E5484D` — 4.5:1 on the
+input ground, 5.0:1 on obsidian — the invalid state carries an inset edge as well
+as a hue so it does not depend on colour vision, and legal list markers moved to a
+token that clears AA. The decorative bullet is unchanged; it carries no meaning.
+
+Everything else the page claims was checked rather than assumed: the skip link
+exists, focus is visible, reduced motion is honoured, every image has an alt
+attribute, no heading level is skipped on any page, and all content renders with
+JavaScript disabled.
+
+### Nothing verified the site before this — **CLOSED**
+The repository had no tests and no CI. The request endpoint, the one piece of
+running code in the project, had never been exercised. There are now 13 tests
+covering method handling, the honeypot, autofill tolerance, validation, escaping
+of submitted text into the outgoing email, failing closed without credentials,
+and reporting an upstream mail failure honestly instead of as success. CI runs
+type check, tests, and build on every pull request, confirms all eight pages
+rendered, and scans the tree for committed credentials.
+
+### Smaller corrections
+The footer copyright year was hardcoded to 2026 and would have quietly gone stale;
+it is computed at build time. The footer's GitHub handle was the only item in a row
+of links that was not one; it is now a link. Every internal link and anchor was
+resolved against the build, and each external product link was confirmed to answer.
+
+---
+
 ## Still open
 
 ### H3 — the InTellMe mark — **provisionally wired, awaiting confirmation**

@@ -250,7 +250,12 @@ import Base from '../layouts/Base.astro';
   }
   .form textarea { min-height: 120px; resize: vertical; }
   .form input:hover, .form select:hover, .form textarea:hover { border-color: var(--bronze-edge-hot); }
-  .form input:user-invalid, .form textarea:user-invalid { border-color: var(--danger); }
+  /* Invalid state is carried by weight and an inset edge as well as by hue,
+     so it is perceivable without distinguishing red from bronze. */
+  .form input:user-invalid, .form textarea:user-invalid {
+    border-color: var(--danger);
+    box-shadow: inset 3px 0 0 var(--danger);
+  }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 </style>
 

@@ -25,7 +25,12 @@ npm run dev      # local dev server
 npm run build    # static build into dist/
 npm run preview  # serve the build
 npm run check    # Astro + TypeScript diagnostics
+npm test         # investor request endpoint, against a fake req/res
+npm run verify   # check + test + build, the same gate CI runs
 ```
+
+CI runs `verify` on every pull request, confirms all eight pages rendered, and
+scans the tree for committed credentials.
 
 ## Routes
 

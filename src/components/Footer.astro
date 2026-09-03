@@ -1,5 +1,6 @@
 ---
-const year = 2026;
+// Evaluated at build time, so a redeploy keeps this current without an edit.
+const year = new Date().getFullYear();
 ---
 <footer class="footer">
   <div class="suite suite--flagship">
@@ -27,7 +28,7 @@ const year = 2026;
       <a href="mailto:brandon@intellmeai.com">brandon@intellmeai.com</a>
       <a href="mailto:security@intellmeai.com">security@intellmeai.com</a>
       <a href="/accessibility">Accessibility</a>
-      <span>GitHub: GooseyPrime</span>
+      <a href="https://github.com/GooseyPrime" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>

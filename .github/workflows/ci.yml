@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Type check, tests, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Test the investor request endpoint
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Confirm every page rendered
+        run: |
+          set -euo pipefail
+          for page in index investors privacy terms refunds accessibility 404 investor-request-received; do
+            test -s "dist/$page.html" || { echo "missing or empty: dist/$page.html"; exit 1; }
+          done
+          echo "8 pages present."
+
+      - name: Confirm no secrets were committed
+        run: |
+          set -euo pipefail
+          # Patterns are split so this file does not match itself.
+          PATTERN='(sk''_live_|sk''_test_|AI''za[0-9A-Za-z_-]{35}|BEGIN [A-Z ]*PRIVATE KE''Y)'
+          if grep -rIlE "$PATTERN" \
+               --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=.git \
+               --exclude-dir=.github . ; then
+            echo "A credential pattern was found in the tree."
+            exit 1
+          fi
+          echo "No credential patterns found."
