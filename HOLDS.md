@@ -144,14 +144,23 @@ must be added with SPF and DKIM before this delivers. Add DMARC at the same time
 
 ## Still open
 
-### H3 — the InTellMe mark
-The triangle is rejected. A new mark is proposed: **the Interval** — a capital I that is
-simultaneously a measured value with its uncertainty. Two drawings and a three-state
-family are in the accompanying sheet. Awaiting his choice; nothing has been wired into
-the site.
+### H3 — the InTellMe mark — **provisionally wired, awaiting confirmation**
+The triangle was rejected, so it has been removed rather than left in a branch that is
+supposed to be reviewable. In its place, as a proposal in context: **the Interval** — a
+capital I that is simultaneously a measured value with its uncertainty. The caps are the
+bounds, the champagne bead is the estimate. Drawn from measurement, which is both the
+founder's discipline and the product's thesis, and deliberately none of the AI clichés.
 
-The other four marks — InTellMe wordmark, TruVector, Golden Goose Studio, wAether —
-Brandon is supplying.
+It is now the nav mark, the favicon at every size, and the social card. As vector, so it
+is sharp everywhere and weighs under a kilobyte.
+
+Three state variants ship alongside it — `intellme-state-allow`, `-review`, `-block` —
+where the bead's height inside the interval is the decision. The logo can be used as
+live status inside the product. Nothing on this site uses them yet.
+
+**This is a proposal, not a decision.** If Brandon prefers the slab drawing, or rejects
+the direction, it is one file and three references to change. The other four marks —
+InTellMe wordmark, TruVector, Golden Goose Studio, wAether — he is supplying.
 
 ### H5 — truvector.science
 Confirmed. Investor and research oriented, with member access through to the Emma

@@ -21,7 +21,7 @@
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; }
 .nav__brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav__mark { width: 28px; height: 28px; object-fit: contain; }
+.nav__mark { width: auto; height: 26px; object-fit: contain; }
 .nav__wordmark {
   font-family: var(--display); font-weight: 500;
   font-variation-settings: 'opsz' 36;
