@@ -116,24 +116,50 @@ creates enforceable promises with no legal benefit.
 
 ---
 
+## Closed in the third pass
+
+### H4 — TruVector capability statuses — **CLOSED and published**
+Six capabilities, each with its own state, now live in the Technology section, with a
+key explaining what each state obligates. One Implemented, two Under validation, one
+Planned, two Hypothesis. A companion block, *Where this sits against published work*,
+states the distinction from policy-gating approaches directly rather than waiting for a
+reviewer to find the overlap themselves.
+
+### Golden Goose Studio badge — **corrected**
+Stripe has always been in live mode, but the storefront has never been marketed, has no
+testers, still has known failures, and has never taken an order. The badge is now
+**Storefront in beta**, and both the homepage and the investor page say plainly that it
+is open on live payments, unmarketed, and has not taken a first order. The investor
+page's funding status no longer says anything is "charging" — it says pre-revenue
+across every application, with two products able to take payment.
+
+### Investor form delivery — **CLOSED**
+Rewired to Mailjet Send API v3.1, the sender already used for the storefront. Needs
+`MJ_APIKEY_PUBLIC` and `MJ_APIKEY_PRIVATE` in Vercel. **`intellmeai.com` is not yet a
+validated sending domain in Mailjet** — only `goldengoosetees.com` is — so the domain
+must be added with SPF and DKIM before this delivers. Add DMARC at the same time;
+`goldengoosetees.com` still has no DMARC record either.
+
+---
+
 ## Still open
 
-### H4 — TruVector capability statuses
-Now explained and pre-filled. See the proposal in the accompanying message. The
-capability table is **still not published** and will not be until Brandon confirms the
-label on each row.
+### H3 — the InTellMe mark
+The triangle is rejected. A new mark is proposed: **the Interval** — a capital I that is
+simultaneously a measured value with its uncertainty. Two drawings and a three-state
+family are in the accompanying sheet. Awaiting his choice; nothing has been wired into
+the site.
+
+The other four marks — InTellMe wordmark, TruVector, Golden Goose Studio, wAether —
+Brandon is supplying.
 
 ### H5 — truvector.science
-Confirmed as the intended public site, with member access to the Emma backend behind
-it. A rebuild plan is in the accompanying message. Not started — separate repository,
-separate piece of work.
+Confirmed. Investor and research oriented, with member access through to the Emma
+backend, and no mention of any funding body. Page-by-page plan in the accompanying
+message; build starts next, in the separate repository.
 
 ### H10 — Hero imagery
-Direction proposed in the accompanying message. The current abstract material study is
-production-safe and stays until replaced.
-
-### H3 — Four marks
-InTellMe wordmark, TruVector, Golden Goose Studio, wAether. Brandon is supplying.
+Brandon is producing the image. The current abstract material study holds the slot.
 
 ---
 

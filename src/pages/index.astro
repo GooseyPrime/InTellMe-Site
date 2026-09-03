@@ -74,6 +74,65 @@ import Base from '../layouts/Base.astro';
           </div>
         </div>
       </div>
+
+      <!-- What is built, and what is not -->
+      <div class="maturity reveal">
+        <h3 class="room-title">What is built, and what is not.</h3>
+        <p style="margin-top:16px;max-width:62ch">Each capability below carries its own state. Nothing is described as finished because the architecture calls for it, and the two unproven claims are named as unproven rather than buried.</p>
+
+        <div class="maturity__grid">
+          <div class="maturity__row">
+            <span class="maturity__name">Evidence object and decision path</span>
+            <span class="maturity__note">The structured result a downstream system reads, and the Allow &middot; Review &middot; Block boundary it obeys. Schema and boundary are fixed and running.</span>
+            <span class="maturity__state"><span class="state state--implemented">Implemented</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Contradiction and divergence</span>
+            <span class="maturity__note">Detecting that sources disagree, and carrying that disagreement into the decision instead of averaging it away. Detectable and measured; calibration is not settled.</span>
+            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Independence-aware evidence</span>
+            <span class="maturity__note">Discounting agreement between sources that share an origin, so that one claim repeated five times does not score as five confirmations.</span>
+            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Quorum</span>
+            <span class="maturity__note">The rule that decides how much independent agreement a claim needs before it may pass, given what acting on it would cost. Specified, not built.</span>
+            <span class="maturity__state"><span class="state state--planned">Planned</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">AHE / HRA</span>
+            <span class="maturity__note">Adjudication under conflicting evidence where no source is authoritative. Stated as a claim with a stated way to be wrong, and not yet demonstrated.</span>
+            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Kinematic validation</span>
+            <span class="maturity__note">Treating a claim's movement through evidence over time as a signal in its own right. The most speculative element here, and the reason the research is research.</span>
+            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
+          </div>
+        </div>
+
+        <div class="maturity__key">
+          <div><b>Implemented</b> &mdash; runs, and measured</div>
+          <div><b>Under validation</b> &mdash; protocol written, results partial</div>
+          <div><b>Planned</b> &mdash; specified, not built</div>
+          <div><b>Hypothesis</b> &mdash; a claim with a stated way to be wrong</div>
+        </div>
+      </div>
+
+      <!-- Where this sits against published work -->
+      <div class="flagship reveal" style="margin-top:64px;padding-top:48px;border-top:1px solid var(--bronze-edge)">
+        <div class="flagship__pane">
+          <h3 class="room-title">Where this sits against published work.</h3>
+          <p style="margin-top:18px">Pre-execution gating for AI systems is an active area, and there is published work describing an Allow / Deny / Escalate decision in front of an agent's action. Two of those decisions look alike from the outside.</p>
+        </div>
+        <div class="flagship__pane">
+          <p><strong>They are not the same decision.</strong> The published approaches ask a permission question: is this actor allowed to take this action, under this policy? The answer is a lookup, and it is right or wrong.</p>
+          <p>TruVector asks an evidentiary question: given conflicting sources of unequal independence, how well supported is the assertion this action rests on &mdash; and is that support enough for what the action would cost? The answer is a judgement under uncertainty, and it carries its own error bar.</p>
+          <p>Policy gating and evidential adjudication compose. A system can want both, and neither substitutes for the other.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -117,9 +176,9 @@ import Base from '../layouts/Base.astro';
           <span class="product__mark--typeset">Studio</span>
           <div class="product__meta">
             <h3 class="room-title" style="font-size:1.3rem">Golden Goose Studio</h3>
-            <span class="badge badge--live">Live</span>
+            <span class="badge">Storefront in beta</span>
           </div>
-          <p class="product__body">AI-assisted product design with Printful-integrated placement, mockup, checkout, and fulfillment. Its first storefront is Golden Goose Tees.</p>
+          <p class="product__body">AI-assisted product design with Printful-integrated placement, mockup, checkout, and fulfillment. Its first storefront, Golden Goose Tees, is open and connected to live payments; it has not yet been marketed and has not taken a first order.</p>
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://www.goldengoosetees.com/" rel="noopener">Open the storefront <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
@@ -167,7 +226,7 @@ import Base from '../layouts/Base.astro';
         <li><span class="rail__name">NSF SBIR Project Pitch</span> &mdash; <span class="rail__note">in preparation. Pursued, not awarded.</span></li>
         <li><span class="rail__name">ResearchOne</span> &mdash; <span class="rail__note">private beta.</span></li>
         <li><span class="rail__name">SAVR</span> &mdash; <span class="rail__note">web beta and Android testing.</span></li>
-        <li><span class="rail__name">Golden Goose Studio</span> &mdash; <span class="rail__note">live, storefront trading as Golden Goose Tees.</span></li>
+        <li><span class="rail__name">Golden Goose Studio</span> &mdash; <span class="rail__note">storefront in beta, open at Golden Goose Tees; unmarketed, first order still ahead.</span></li>
         <li><span class="rail__name">wAether</span> &mdash; <span class="rail__note">live.</span></li>
       </ul>
     </div>

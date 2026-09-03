@@ -6,17 +6,24 @@
  * JavaScript disabled: on success the browser is redirected (303) to
  * /investor-request-received.
  *
- * Configuration (Vercel project environment variables):
- *   RESEND_API_KEY    required — API key for the transactional sender
- *   INVESTOR_INBOX    optional — defaults to brandon@intellmeai.com
- *   INVESTOR_FROM     optional — defaults to no-reply@intellmeai.com
+ * Delivery is Mailjet Send API v3.1, which is already in use for
+ * goldengoosetees.com.
  *
- * If RESEND_API_KEY is absent the endpoint fails closed with a 503 and
+ * Configuration (Vercel project environment variables):
+ *   MJ_APIKEY_PUBLIC    required — Mailjet API key
+ *   MJ_APIKEY_PRIVATE   required — Mailjet secret key
+ *   INVESTOR_INBOX      optional — defaults to brandon@intellmeai.com
+ *   INVESTOR_FROM       optional — defaults to no-reply@intellmeai.com
+ *
+ * The sending domain must be validated in Mailjet with SPF and DKIM before
+ * this will deliver. intellmeai.com is not yet validated there.
+ *
+ * If the credentials are absent the endpoint fails closed with a 503 and
  * tells the sender to email directly. It never silently drops a request.
  */
 
 const INBOX = process.env.INVESTOR_INBOX || 'brandon@intellmeai.com';
-const FROM = process.env.INVESTOR_FROM || 'InTellMe <no-reply@intellmeai.com>';
+const FROM = process.env.INVESTOR_FROM || 'no-reply@intellmeai.com';
 const MIN_FILL_MS = 2500;
 const MAX_FIELD = 4000;
 
@@ -84,31 +91,42 @@ export default async function handler(req, res) {
     ['Message', clean(body.message)]
   ].filter(([, v]) => v);
 
-  if (!process.env.RESEND_API_KEY) {
+  const key = process.env.MJ_APIKEY_PUBLIC;
+  const secret = process.env.MJ_APIKEY_PRIVATE;
+  if (!key || !secret) {
     return res.status(503).json({
       error: 'The request form is not configured to send yet. Please email ' + INBOX + ' directly.'
     });
   }
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
+    const response = await fetch('https://api.mailjet.com/v3.1/send', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        Authorization: 'Basic ' + Buffer.from(`${key}:${secret}`).toString('base64'),
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: FROM,
-        to: [INBOX],
-        reply_to: email,
-        subject: `Investor request — ${name}`,
-        text: fields.map(([k, v]) => `${k}: ${v}`).join('\n'),
-        html: fields
-          .map(([k, v]) => `<p><strong>${escapeHtml(k)}</strong><br>${escapeHtml(v).replace(/\n/g, '<br>')}</p>`)
-          .join('')
+        Messages: [{
+          From: { Email: FROM, Name: 'InTellMe' },
+          To: [{ Email: INBOX }],
+          ReplyTo: { Email: email, Name: name },
+          Subject: `Investor request — ${name}`,
+          TextPart: fields.map(([k, v]) => `${k}: ${v}`).join('\n'),
+          HTMLPart: fields
+            .map(([k, v]) => `<p><strong>${escapeHtml(k)}</strong><br>${escapeHtml(v).replace(/\n/g, '<br>')}</p>`)
+            .join(''),
+          CustomID: 'investor-request'
+        }]
       })
     });
-    if (!response.ok) throw new Error(`sender returned ${response.status}`);
+    if (!response.ok) {
+      const detail = await response.text().catch(() => '');
+      throw new Error(`Mailjet returned ${response.status} ${detail.slice(0, 300)}`);
+    }
+    const body = await response.json().catch(() => null);
+    const status = body && body.Messages && body.Messages[0] && body.Messages[0].Status;
+    if (status && status !== 'success') throw new Error(`Mailjet status ${status}`);
   } catch (err) {
     console.error('investor-request delivery failed:', err && err.message);
     return res.status(502).json({

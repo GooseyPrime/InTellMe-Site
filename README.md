@@ -42,13 +42,20 @@ npm run check    # Astro + TypeScript diagnostics
 
 A plain HTML POST, so it works without JavaScript. Configure in the Vercel project:
 
+Delivery is Mailjet Send API v3.1, the sender already in use for the storefront.
+
 | Variable | Required | Default |
 |----------|----------|---------|
-| `RESEND_API_KEY` | yes | — |
+| `MJ_APIKEY_PUBLIC` | yes | — |
+| `MJ_APIKEY_PRIVATE` | yes | — |
 | `INVESTOR_INBOX` | no | `brandon@intellmeai.com` |
-| `INVESTOR_FROM` | no | `InTellMe <no-reply@intellmeai.com>` |
+| `INVESTOR_FROM` | no | `no-reply@intellmeai.com` |
 
-Without `RESEND_API_KEY` the endpoint returns 503 and points the sender at the direct
+**`intellmeai.com` must be added and validated as a sending domain in Mailjet**, with
+SPF and DKIM published, before this will deliver. Only `goldengoosetees.com` is
+validated today. Add a DMARC record for `intellmeai.com` at the same time.
+
+Without the two keys the endpoint returns 503 and points the sender at the direct
 email address. It never accepts a request it cannot deliver.
 
 ## House rules
