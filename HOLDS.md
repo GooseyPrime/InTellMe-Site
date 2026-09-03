@@ -1,142 +1,153 @@
 # HOLDS — status against the site design specification v1.0
 
-This file tracks every item the design specification marked HOLD-FOR-BRANDON,
-plus the decisions taken during the build that need sign-off before deployment.
-Nothing in the site invents a fact. Where a fact was not confirmed on a live
-public page, in a public repository, or in this file, it was left out.
+Second pass, after Brandon's answers of 3 September 2026. Everything resolved in this
+round is marked **CLOSED** with what was done. What remains is short and specific.
 
 ---
 
-## Resolved from public evidence
+## Closed this round
 
-| ID | Hold | Resolution | Evidence |
-|----|------|-----------|----------|
-| H6 | ResearchOne early-access destination | `https://www.researchone.io/`. The live site has Sign In, Start Research, and public pricing, so the default destination in the spec is correct. | researchone.io, researchone.io/pricing |
-| H7 | Raise amount and numeric use of funds | Not published. Use-of-funds is shown as four categories with no dollar target, exactly as the spec directs. | — |
-| H8 | Milestone calendar dates | Not published. The timeline reads as sequence, with a caption saying dates are published when they are committed. | — |
-| H9 | Studio mark vs Tools lockup | Tools uses its own official crest; Studio is typeset. They no longer share a lockup. | — |
-| H11 | Whether SAVR's parent badge upgrades | Kept as "Launching — web beta and Android testing" per the spec's badge table. savr.cam is a live marketing site with no app-store link published. | savr.cam |
-| H12 | Licensed display face | Shipped Fraunces (SIL OFL), self-hosted and subset. PP Editorial New / Canela remain an optional upgrade and are not blocking. | — |
+### H0 — Golden Goose Studio vs Golden Goose Tees — **CLOSED**
+`goldengoosestudio.com` does not exist. The live storefront is `goldengoosetees.com`,
+whose own page title reads *"Golden Goose Tees — AI Custom Apparel Studio,"* and the
+repository is `goldengoosetees-studio`. All three now reconcile on the site the same
+way the product already describes itself:
 
-Also confirmed while auditing, and reflected in the build:
+> **Golden Goose Studio** is the platform — AI design, Printful-integrated placement,
+> mockup, checkout, fulfillment. **Golden Goose Tees** is the first storefront built on it.
 
-- **goldengoosestudio.com is a parked GoDaddy placeholder.** Studio therefore ships
-  with no Visit button, which is what the spec requires until a URL exists.
-- **Golden Goose Tools pricing** is free audit + $29 once for the complete list with
-  fixes, confirmed on the live page.
-- **wAether pricing** is $4.99/month or $49.99/year, and the named sources are
-  NOAA SWPC, USGS, NASA DONKI, and NOAA OVATION, confirmed on the live page.
+The badge moved from *Coming soon* to **Live**, and the room now carries a real button
+to `goldengoosetees.com`. **Confirm:** is checkout actually taking live orders today? The
+storefront says "order in minutes"; the environment file still has
+`VITE_STRIPE_TEST_MODE=true`. If it is still in test mode the badge must go back to
+*Launching* until it is not.
+
+### H1 — Legal entity — **CLOSED**
+Sole proprietor, no registered assumed name. Researched and resolved. Tennessee has
+**no statewide assumed-name registration available to sole proprietors** — the
+Secretary of State filing is only open to registered entities. Sole proprietors
+register a trade name incidentally, through the county clerk's Business Tax License
+Application. So there is nothing he has failed to file.
+
+Using "InTellMe" publicly is lawful. A trade name is not a claim of entity status. What
+is unlawful is implying a corporate form he does not have, so the site never writes
+"Inc.", "LLC", "Corp.", or "Company" in that sense.
+
+**The one story, used everywhere:**
+
+> InTellMe is the trade name under which Michael Brandon Lane, a sole proprietor in
+> Johnson City, Tennessee, develops and operates its products. Development to date has
+> been self-funded. There is no outside capital, no debt, and no cap table.
+
+That line, or a compression of it, now appears in the footer, in the Privacy Policy
+(as controller identity), in the Terms (as the definition of "we"), and on the investor
+page under Funding status. Contracts should be signed
+**"Michael Brandon Lane d/b/a InTellMe."**
+
+### H2 — Founder bio — **CLOSED**, subject to his edit
+Written and live on `/investors`. It states only what is verifiable: chemical
+engineering training, sole engineer, five products built and shipped self-funded in
+public, GitHub handle, city. It names the gap — bandwidth, and no commercial
+function — rather than hiding it. **Nothing invented: no employers, no degrees, no
+years, no awards.**
+
+### H3 — InTellMe mark — **decision put to Brandon**
+Three candidates rendered at real sizes on the site ground; see the comparison sheet.
+Recommendation is the gold triangle. The other four marks (InTellMe wordmark,
+TruVector, Golden Goose Studio, wAether) stay typeset in Fraunces until he supplies
+originals, which he has said he will.
+
+### Build decision 4 — Analytics — **CLOSED**
+The InTellMe measurement ID was already in the old site's source and is confirmed real:
+**`G-V8HDM5XF8J`**. It is installed in `public/analytics.js` with Consent Mode v2:
+storage denied by default in the EEA/UK/Switzerland, granted elsewhere, with a quiet
+consent bar that overrides either way and is remembered per browser. CSP updated in
+both host configs to allow exactly the Google measurement origins and nothing else.
+
+Other tags found while searching, for the record: ResearchOne `G-C9CW32EES7`,
+SAVR `G-WXDLLPJ8T2`, yoohoo.guru `G-VVX0RHWEL0`.
+
+**One console setting must be turned off before launch** — Google Signals, and data
+sharing with Google products. The privacy policy states they are off.
+
+### Build decision 5 — GitHub Pages — **CLOSED**
+`CNAME` deleted from the repository root and from `public/`. `DEPLOYMENT.md` now says
+Pages is not a deployment target.
+
+### Build decision 1 — Legal pages — **CLOSED**
+Researched against current law rather than guessed. Changes made:
+
+- **A Do Not Track statement was missing and is legally required.** CalOPPA
+  (Cal. B&P § 22575), Delaware DOPPA, and Nevada NRS 603A.340 apply with **no revenue,
+  traffic, or entity threshold**, and all three require the site to state how it
+  responds to DNT signals. Added, answered honestly.
+- **Google Analytics is now disclosed by name**, with what it collects and links to
+  Google's own policies. Required by the same statutes.
+- **The CCPA and GDPR sections were rewritten.** The old ones promised formal rights
+  machinery he is far below the thresholds to owe and does not operate — and under
+  FTC Act § 5, a published promise you do not keep is itself a deceptive practice. The
+  new sections say plainly that the thresholds are not met, that nothing is sold, and
+  that anyone may email and get an answer within 45 days. That is a promise he can keep.
+- **The arbitration clause and class-action waiver were removed.** For a sole
+  proprietor with unlimited personal liability, mass arbitration is the larger threat:
+  under AAA consumer rules the business pays nearly all the fees, and a coordinated
+  campaign runs into seven figures before anyone reaches the merits. Replaced with
+  Tennessee venue and a small-claims carve-out.
+- **Subscription terms rewritten to ROSCA and California's amended ARL** (in force since
+  1 July 2025, and it reaches any business with a California subscriber wherever it sits):
+  cancellation online in no more steps than sign-up, advance notice of price changes,
+  trial-conversion and annual-renewal reminders. *(The FTC "click to cancel" rule was
+  vacated in full by the Eighth Circuit in July 2025 and never took effect; ROSCA and
+  state law still bind, so the site is built to the standard anyway.)*
+- **Shipping timeframes added** for physical goods, per the FTC Mail, Internet, or
+  Telephone Order Merchandise Rule (16 C.F.R. 435) — the 30-day rule, the delay notice,
+  and automatic cancellation and refund.
+- **A new `/accessibility` page.** Not required, and the highest-value defensive page he
+  can publish: web accessibility filings ran 3,117 in federal court in 2025, up 27%, and
+  e-commerce is the single most-targeted category. A live statement with a named contact
+  and a response commitment is what makes demand letters go away. Overlay widgets are
+  explicitly not used — they are a litigation magnet and the FTC fined a vendor $1M for
+  selling one as compliance.
+
+**What is deliberately NOT on the site:** a "Do Not Sell My Personal Information" link,
+a Notice at Collection, GPC signal handling, an EU Article 27 representative, a DPO, or
+a Data Processing Addendum. He is below every threshold, and volunteering that machinery
+creates enforceable promises with no legal benefit.
 
 ---
 
-## Still open — needed from Brandon
-
-### H1 — Legal entity name, formation state, registered address
-Not found on any live public page, in the repository, or in the current legal pages.
-The footer therefore reads `© 2026 InTellMe` with no "Inc." and no state of
-incorporation, and the legal pages name no entity.
-
-**Needed:** the registered legal name and state, if one exists, so the footer and the
-legal pages can name it. If there is no registered entity yet, say so and the site
-stays exactly as it is — that is a defensible position for a pre-revenue company.
-
-### H2 — Degrees, prior employers, awards, advisors, customers, revenue, user counts
-Deliberately omitted. The founder section stops at name, city, GitHub handle, and
-email. The funding section states plainly that development to date has been
-self-funded and that the company is pre-revenue.
-
-**Needed:** nothing, unless you want any of it added. Anything added here has to be
-verifiable.
-
-### H3 — Official marks
-| Mark | Status | Source |
-|------|--------|--------|
-| InTellMe | **Shipped** | `assets/intellmeoptionnobr (Custom).png` (512², drawn for dark) |
-| InTellMe wordmark | **Typeset** in Fraunces 500 | no file found |
-| TruVector | **Typeset** | only a generic green shield placeholder exists (`GooseyPrime/truvector/public/truvector-logo.svg`); not shipped |
-| ResearchOne | **Shipped** as clean SVG | the "Contradiction Ring" from `researchone.io/og-image.svg`, redrawn as a standalone currentColor mark |
-| SAVR | **Shipped** as clean SVG | the official mark from the live `savr.cam` favicon (256²), redrawn for dark |
-| Golden Goose Tools | **Shipped** | the 8000² official PNG, converted to a monochrome ivory crest; the lockup's own wordmark was cropped because the heading already names the product |
-| Golden Goose Studio | **Typeset** | no mark exists; the domain is parked |
-| wAether | **Typeset** | the only lockup found says "The wAether App" and is drawn for light; using it would contradict the naming rule |
-
-**Needed:** high-resolution originals — SVG preferred — for **InTellMe wordmark,
-TruVector, Golden Goose Studio, and wAether**. Production must not ship a generated
-logo, so those four stay typeset until you supply them.
-
-**One decision:** the repository's "primary" InTellMe logo is the full-colour rainbow
-mark used on the current site. It is drawn for a light ground and fights the
-obsidian-and-champagne palette. The gold triangle (`intellmeoptionnobr`) is drawn for
-dark and is what is shipped in the nav, favicon, and OG image. Confirm or overrule.
+## Still open
 
 ### H4 — TruVector capability statuses
-Unresolved. The public TruVector documents describe the architecture but never label
-Quorum, contradiction and divergence, independence-aware evidence, AHE/HRA, or
-kinematic validation as Implemented / Under validation / Planned / Hypothesis.
+Now explained and pre-filled. See the proposal in the accompanying message. The
+capability table is **still not published** and will not be until Brandon confirms the
+label on each row.
 
-Per the specification, **the capability list is not published**. The Technology room
-ships the lede, the three decision states, and the body paragraph only.
+### H5 — truvector.science
+Confirmed as the intended public site, with member access to the Emma backend behind
+it. A rebuild plan is in the accompanying message. Not started — separate repository,
+separate piece of work.
 
-**Needed:** the four-way label for each capability before that list can go live.
+### H10 — Hero imagery
+Direction proposed in the accompanying message. The current abstract material study is
+production-safe and stays until replaced.
 
-### H5 — Public URL for TruVector
-Partially resolved. `truvector.science` resolves, and `GooseyPrime/truvector` declares
-it as `og:url`. That repository is a login-gated multi-page React app containing
-InTellMe, TruVector Overview, Technical Architecture, Emma Placement, and For
-Investors pages. The host did not return a response during this audit.
-
-TruVector is **not linked out** from the new site. Its call to action points at the
-gated technical brief request on `/investors#request`, which is what the specification
-asks for.
-
-**Needed:** confirm whether `truvector.science` is the intended public destination, and
-whether it should be linked from the Technology room.
-
-### H10 — Commissioned hero photography
-The hero currently uses an abstract material study generated for this build:
-a layered warm gradient field, one champagne edge, and fine grain, 2400×1350 WebP at
-56 KB. It is not stock, not a generated image of a subject, and not a logo — it is a
-material texture, which the specification's imagery direction permits.
-
-**Needed:** commissioned photography or a material still, if you want one. The current
-still is production-safe as-is.
+### H3 — Four marks
+InTellMe wordmark, TruVector, Golden Goose Studio, wAether. Brandon is supplying.
 
 ---
 
-## Build decisions that need sign-off
+## Two things that are not site work but should not wait
 
-1. **Legal pages were rewritten to cover "InTellMe and its products and services"
-   generically.** The old pages enumerated eleven products, most of which are on the
-   specification's ban list, and the definition of done requires no banned product
-   names anywhere in the HTML. Every substantive clause was preserved — data
-   collection, sharing, retention, rights, CCPA, GDPR, acceptable use, IP, payment,
-   termination, disclaimers, limitation of liability, indemnity, arbitration, class
-   action waiver, export controls, the 14-day defect window, EU withdrawal, California
-   1723 and 1789.3 — only the product enumeration is gone. A general clause is also
-   more robust than a list that can omit a product. **Have counsel confirm before
-   merge.**
+1. **Rotate the keys in `GoldenGooseTees Secrets.txt` on Google Drive.** It holds a
+   **live Stripe secret key**, a Supabase service-role key, the Printful key, three
+   model-provider keys, and a Google OAuth client secret, in plaintext, in a
+   Drive-synced folder. The Stripe key is the urgent one — it can move money.
+   Rotate all of them, then keep secrets in the Vercel and Supabase environment
+   settings rather than in a file.
 
-2. **Governing law now names Tennessee.** The old Terms said "the State in which
-   InTellMe is headquartered," which is not a usable choice-of-law clause. Johnson
-   City, Tennessee is confirmed by the specification and the footer. Confirm.
-
-3. **The investor request form needs one environment variable.** The form is a plain
-   HTML POST to `/api/investor-request`, so it works with JavaScript disabled. Set
-   `RESEND_API_KEY` in the Vercel project (optionally `INVESTOR_INBOX` and
-   `INVESTOR_FROM`). Until it is set the endpoint fails closed with a message pointing
-   at `brandon@intellmeai.com`, which is also shown next to the submit button. It never
-   silently drops a request. The honeypot and a 2.5-second time trap are active.
-
-4. **Analytics is not installed.** `G-V8HDM5XF8J` was a hold, and the content security
-   policy currently allows scripts from this origin only. Adding a measurement tag
-   means adding that host to `script-src` and `connect-src` in both `vercel.json` and
-   `netlify.toml`.
-
-5. **`CNAME` is duplicated into `public/`** so it survives the build on any host. If
-   GitHub Pages is still a deployment target it now needs a build workflow, because the
-   site is no longer a single hand-written `index.html`.
-
-6. **Removed from the repository:** the old `index.html`, `styles.css`, `script.js`,
-   the three legal pages, the particle canvas component, the Yoohoo assets, the 13 MB
-   Golden Goose Tools raster, `BRAND_PACK.md` (its tokens are all superseded),
-   `CONSOLE_ERRORS_CLARIFICATION.md`, `_headers`, and `.htaccess`.
+2. **Form the Tennessee LLC.** Around $300 to form and $300 a year to maintain. It
+   converts unlimited personal liability into bounded business risk, it is what a
+   business bank account and an SBA Company Registry entry both assume, and no
+   investor will wire into a sole proprietorship. It costs less than one hour of the
+   lawyer he does not have.

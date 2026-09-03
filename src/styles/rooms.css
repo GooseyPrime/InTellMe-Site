@@ -237,3 +237,18 @@
 @media (min-width: 1024px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .js #dust { display: block; }
 }
+
+/* --- consent bar: quiet, tokenised, never a modal --------------- */
+#consent-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 32px;
+  padding: 18px var(--gutter);
+  background: color-mix(in srgb, var(--smoked-bronze) 96%, transparent);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--bronze-edge);
+}
+#consent-bar p { margin: 0; flex: 1 1 320px; font-size: 14px; line-height: 1.5; color: var(--parchment); max-width: 72ch; }
+#consent-bar a { color: var(--parchment); text-decoration: underline; text-decoration-color: var(--bronze-edge-hot); text-underline-offset: 3px; }
+#consent-bar a:hover { color: var(--ivory); text-decoration-color: var(--champagne); }
+.consent-bar__actions { display: flex; gap: 10px; flex: 0 0 auto; }
+#consent-bar .btn { padding: 11px 18px; font-size: 13px; }

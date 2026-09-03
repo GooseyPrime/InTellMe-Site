@@ -14,6 +14,7 @@ JavaScript disabled.
 
 - Fonts are self-hosted and subset in `public/assets/fonts/`. No `fonts.googleapis.com`.
 - All imagery is local. **No runtime requests to Cloudinary or any other origin.**
+- The only third-party request is the GA4 tag, loaded behind Consent Mode v2.
 - One CSS system: `src/styles/tokens.css`, `site.css`, `rooms.css`.
 
 ## Commands
@@ -33,7 +34,7 @@ npm run check    # Astro + TypeScript diagnostics
 | `/` | `src/pages/index.astro` |
 | `/investors` | `src/pages/investors.astro` |
 | `/investor-request-received` | `src/pages/investor-request-received.astro` |
-| `/privacy` `/terms` `/refunds` | `src/pages/*.astro` via `src/layouts/Legal.astro` |
+| `/privacy` `/terms` `/refunds` `/accessibility` | `src/pages/*.astro` via `src/layouts/Legal.astro` |
 | `/404` | `src/pages/404.astro` |
 | `POST /api/investor-request` | `api/investor-request.js` (Vercel function) |
 
@@ -63,5 +64,8 @@ These are enforced by the design specification and should stay true:
   Tools, Golden Goose Studio → wAether. Nothing else appears in nav, footer, sitemap,
   or meta.
 - Never use the nav label "Our Apps."
+- InTellMe is a trade name, not an entity. Never write "Inc.", "LLC", "Corp.", or
+  anything implying incorporation, and never claim a team, customers, certifications,
+  or benchmark numbers that do not exist.
 
 Open items are tracked in [HOLDS.md](./HOLDS.md).
