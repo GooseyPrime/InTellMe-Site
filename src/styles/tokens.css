@@ -1,0 +1,107 @@
+/* ============================================================
+   InTellMe — design tokens.  Spec §03 color, §04 type, §05 space,
+   §06 motion.  Dark only; there is no light mode in v1.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces-var.woff2') format('woff2-variations');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+@font-face {
+  font-family: 'Plex Sans';
+  src: url('/assets/fonts/plex-sans-400.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Plex Sans';
+  src: url('/assets/fonts/plex-sans-500.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Plex Mono';
+  src: url('/assets/fonts/plex-mono-400.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Plex Mono';
+  src: url('/assets/fonts/plex-mono-500.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+
+
+/* Metric-matched fallbacks: hold the layout while the webfonts arrive,
+   so the hero does not reflow on swap. */
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('Times'), local('DejaVu Serif');
+  size-adjust: 103%;
+  ascent-override: 95%;
+  descent-override: 24.8%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Plex Fallback';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans'), local('DejaVu Sans');
+  size-adjust: 98%;
+  ascent-override: 104.6%;
+  descent-override: 28.1%;
+  line-gap-override: 0%;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* --- surface ------------------------------------------------ */
+  --obsidian:          #0C0B0A;
+  --wet-stone:         #141210;
+  --smoked-bronze:     #1C1814;
+
+  /* --- line ---------------------------------------------------- */
+  --bronze-edge:       #2A241C;
+  --bronze-edge-hot:   #3A3228;
+
+  /* --- metal (jewelry, never paint) ---------------------------- */
+  --champagne:         #C6A36A;
+  --champagne-soft:    rgba(198, 163, 106, 0.18);
+  --aged-brass:        #8E7344;
+  --candle:            #E8C99A;
+
+  /* --- type ---------------------------------------------------- */
+  --ivory:             #F2EBE0;
+  --parchment:         #D6CFC3;
+  --stone-text:        #A59C90;
+  /* Ornament only — never text. It does not reach 4.5:1 on any ground here. */
+  --mute:              #6F675C;
+
+  /* --- state --------------------------------------------------- */
+  /* 4.5:1 on the input ground and 5.0:1 on obsidian, so it is legible as
+     text and clears the 3:1 floor for a border that carries meaning. */
+  --danger:            #E5484D;
+
+  /* --- families ------------------------------------------------ */
+  --display: 'Fraunces', 'Fraunces Fallback', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+  --body: 'Plex Sans', 'Plex Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --label: 'Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* --- structure ----------------------------------------------- */
+  --measure-suite: 1120px;
+  --measure-flagship: 1280px;
+  --gutter: 24px;
+  --nav-h: 56px;
+
+  /* --- motion (§06) -------------------------------------------- */
+  --ease-lobby: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.55, 1);
+  --t-micro: 180ms;
+  --t-hover: 420ms;
+  --t-reveal: 900ms;
+  --t-breath: 10s;
+}
+
+@media (min-width: 640px)  { :root { --gutter: 40px; } }
+@media (min-width: 1024px) { :root { --gutter: 64px; --nav-h: 64px; } }
+@media (min-width: 1440px) { :root { --gutter: 88px; } }

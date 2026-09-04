@@ -1,0 +1,43 @@
+---
+interface Props { path: string; }
+const { path } = Astro.props;
+const home = path === '/';
+const links = [
+  { label: 'Technology', href: home ? '#technology' : '/#technology' },
+  { label: 'Products',   href: home ? '#products'   : '/#products' },
+  { label: 'Research',   href: home ? '#research'   : '/#research' },
+  { label: 'Company',    href: home ? '#company'    : '/#company' },
+  { label: 'Investors',  href: '/investors' },
+  { label: 'Contact',    href: home ? '#contact'    : '/#contact' }
+];
+---
+<header class="nav" id="nav">
+  <div class="suite suite--flagship nav__inner">
+    <a class="nav__brand" href="/" aria-label="InTellMe — home">
+      <img class="nav__mark" src="/assets/logos/intellme.svg" width="11" height="26" alt="" />
+      <span class="nav__wordmark">InTellMe</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      {links.map((l) => (
+        <a class="nav__link" href={l.href}
+           aria-current={l.href === path ? 'page' : undefined}>{l.label}</a>
+      ))}
+    </nav>
+
+    <button class="nav__toggle" type="button" id="drawer-open"
+            aria-expanded="false" aria-controls="drawer">
+      <span class="bars" aria-hidden="true"></span> Menu
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="suite drawer__head">
+    <span class="nav__wordmark">InTellMe</span>
+    <button class="drawer__close" type="button" id="drawer-close">Close</button>
+  </div>
+  <div class="suite drawer__links">
+    {links.map((l) => <a class="drawer__link" href={l.href}>{l.label}</a>)}
+  </div>
+</div>

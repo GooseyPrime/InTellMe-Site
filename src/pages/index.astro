@@ -1,0 +1,297 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="InTellMe"
+  description="Evidence-governed research, verification, and decision infrastructure. TruVector, ResearchOne, and the products they make possible."
+  path="/"
+>
+
+  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-line">
+    <picture>
+      <source media="(max-width: 1023px)" srcset="/assets/imagery/hero-material-1400.webp" />
+      <img class="hero__still" src="/assets/imagery/hero-material.webp" alt=""
+           width="2400" height="1350" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="hero__veil" aria-hidden="true"></div>
+
+    <div class="suite suite--flagship hero__inner">
+      <h1 class="hero-line" id="hero-line">AI decisions should be traceable before they become consequential.</h1>
+      <hr class="rule--champagne" />
+      <p class="hero-support">InTellMe builds evidence-governed research, verification, and decision infrastructure for organizations operating in high-uncertainty environments.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#technology">Explore TruVector</a>
+        <a class="btn btn--secondary" href="/investors">Investor Overview</a>
+        <a class="btn btn--tertiary" href="https://www.researchone.io/" rel="noopener">Try ResearchOne <span class="arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TECHNOLOGY ─────────────────────────────────────────── -->
+  <section class="room" id="technology" aria-labelledby="technology-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Core technology</p>
+      <h2 class="suite-title reveal" id="technology-title">The work that gives the house its name.</h2>
+
+      <div class="flagship" style="margin-top:56px">
+        <div class="flagship__pane reveal">
+          <div class="pane__head">
+            <h3 class="product__mark--typeset" style="margin:0">TruVector</h3>
+            <span class="badge">Validation and pilot development</span>
+          </div>
+          <p class="lede pane__lede">Pre-execution arbitration of AI assertions before downstream systems act.</p>
+          <ul class="states" aria-label="Decision states">
+            <li>Allow</li><li>Review</li><li>Block</li>
+          </ul>
+          <p style="margin-top:28px">TruVector sits in front of consequential action. It weighs evidence, independence, and disagreement, then issues a decision a downstream system can obey.</p>
+          <div class="actions" style="margin-top:28px">
+            <a class="btn btn--secondary" href="/investors#request">Request TruVector Technical Brief</a>
+          </div>
+        </div>
+
+        <div class="flagship__pane reveal">
+          <div class="pane__head">
+            <svg class="product__mark" viewBox="0 0 240 240" role="img" aria-label="ResearchOne" style="height:34px;margin:0">
+              <g transform="translate(120 120)" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+                <polygon points="0,-110 95.3,-55 95.3,55 0,110 -95.3,55 -95.3,-55" stroke-width="7"></polygon>
+                <path d="M -50,0 C -50,-40 50,-40 50,0 C 50,40 -50,40 -50,0" stroke-width="9"></path>
+                <path d="M -40,12 C -40,-28 60,-28 60,12 C 60,52 -40,52 -40,12" stroke-width="9" opacity=".62"></path>
+              </g>
+            </svg>
+            <h3 class="room-title" style="font-size:1.5rem">ResearchOne</h3>
+            <span class="badge">Private beta &mdash; early access available</span>
+          </div>
+          <p class="lede pane__lede">Structured deep research that keeps sources, contradictions, reasoning lineage, and report contracts intact.</p>
+          <ul class="facts">
+            <li>Sources stay attached.</li>
+            <li>Contradictions are preserved.</li>
+            <li>Reasoning lineage is kept.</li>
+            <li>Reports obey a contract.</li>
+          </ul>
+          <div class="actions" style="margin-top:28px">
+            <a class="btn btn--tertiary" href="https://www.researchone.io/" rel="noopener">Open ResearchOne <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- What is built, and what is not -->
+      <div class="maturity reveal">
+        <h3 class="room-title">What is built, and what is not.</h3>
+        <p style="margin-top:16px;max-width:62ch">Each capability below carries its own state. Nothing is described as finished because the architecture calls for it, and the two unproven claims are named as unproven rather than buried.</p>
+
+        <div class="maturity__grid">
+          <div class="maturity__row">
+            <span class="maturity__name">Evidence object and decision path</span>
+            <span class="maturity__note">The structured result a downstream system reads, and the Allow &middot; Review &middot; Block boundary it obeys. Schema and boundary are fixed and running.</span>
+            <span class="maturity__state"><span class="state state--implemented">Implemented</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Contradiction and divergence</span>
+            <span class="maturity__note">Detecting that sources disagree, and carrying that disagreement into the decision instead of averaging it away. Detectable and measured; calibration is not settled.</span>
+            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Independence-aware evidence</span>
+            <span class="maturity__note">Discounting agreement between sources that share an origin, so that one claim repeated five times does not score as five confirmations.</span>
+            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Quorum</span>
+            <span class="maturity__note">The rule that decides how much independent agreement a claim needs before it may pass, given what acting on it would cost. Specified, not built.</span>
+            <span class="maturity__state"><span class="state state--planned">Planned</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">AHE / HRA</span>
+            <span class="maturity__note">Adjudication under conflicting evidence where no source is authoritative. Stated as a claim with a stated way to be wrong, and not yet demonstrated.</span>
+            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
+          </div>
+          <div class="maturity__row">
+            <span class="maturity__name">Kinematic validation</span>
+            <span class="maturity__note">Treating a claim's movement through evidence over time as a signal in its own right. The most speculative element here, and the reason the research is research.</span>
+            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
+          </div>
+        </div>
+
+        <div class="maturity__key">
+          <div><b>Implemented</b> &mdash; runs, and measured</div>
+          <div><b>Under validation</b> &mdash; protocol written, results partial</div>
+          <div><b>Planned</b> &mdash; specified, not built</div>
+          <div><b>Hypothesis</b> &mdash; a claim with a stated way to be wrong</div>
+        </div>
+      </div>
+
+      <!-- Where this sits against published work -->
+      <div class="flagship reveal" style="margin-top:64px;padding-top:48px;border-top:1px solid var(--bronze-edge)">
+        <div class="flagship__pane">
+          <h3 class="room-title">Where this sits against published work.</h3>
+          <p style="margin-top:18px">Pre-execution gating for AI systems is an active area, and there is published work describing an Allow / Deny / Escalate decision in front of an agent's action. Two of those decisions look alike from the outside.</p>
+        </div>
+        <div class="flagship__pane">
+          <p><strong>They are not the same decision.</strong> The published approaches ask a permission question: is this actor allowed to take this action, under this policy? The answer is a lookup, and it is right or wrong.</p>
+          <p>TruVector asks an evidentiary question: given conflicting sources of unequal independence, how well supported is the assertion this action rests on &mdash; and is that support enough for what the action would cost? The answer is a judgement under uncertainty, and it carries its own error bar.</p>
+          <p>Policy gating and evidential adjudication compose. A system can want both, and neither substitutes for the other.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS ───────────────────────────────────────────── -->
+  <section class="room room--alt" id="products" aria-labelledby="products-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Commercial ventures</p>
+      <h2 class="suite-title reveal" id="products-title">Products the infrastructure made possible.</h2>
+
+      <div class="rooms">
+        <article class="product reveal">
+          <svg class="product__mark" viewBox="0 0 100 100" role="img" aria-label="SAVR" style="height:40px">
+            <circle cx="50" cy="50" r="49" fill="none" stroke="currentColor" stroke-width="2"></circle>
+            <path fill="currentColor" d="M50.2 27 73 66.4H27.4L50.2 27Z"></path>
+          </svg>
+          <div class="product__meta">
+            <h3 class="room-title" style="font-size:1.3rem">SAVR</h3>
+            <span class="badge">Launching &mdash; web beta and Android testing</span>
+          </div>
+          <p class="product__body">AI-assisted kitchen inventory and recipe planning that turns what you already have into meals.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://savr.cam" rel="noopener">Visit SAVR <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+
+        <article class="product reveal">
+          <img class="product__mark" src="/assets/logos/golden-goose-tools.png"
+               srcset="/assets/logos/golden-goose-tools.png 1x, /assets/logos/golden-goose-tools@2x.png 2x, /assets/logos/golden-goose-tools@3x.png 3x"
+               width="49" height="40" alt="" />
+          <div class="product__meta">
+            <h3 class="room-title" style="font-size:1.3rem">Golden Goose Tools</h3>
+            <span class="badge badge--live">Live</span>
+          </div>
+          <p class="product__body">Instant technical SEO audit of a live page.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://www.goldengoosetools.com/" rel="noopener">Run an SEO Audit <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+
+        <article class="product reveal">
+          <span class="product__mark--typeset">Studio</span>
+          <div class="product__meta">
+            <h3 class="room-title" style="font-size:1.3rem">Golden Goose Studio</h3>
+            <span class="badge">Storefront in beta</span>
+          </div>
+          <p class="product__body">AI-assisted product design with Printful-integrated placement, mockup, checkout, and fulfillment. Its first storefront, Golden Goose Tees, is open and connected to live payments; it has not yet been marketed and has not taken a first order.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://www.goldengoosetees.com/" rel="noopener">Open the storefront <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESEARCH ───────────────────────────────────────────── -->
+  <section class="room" id="research" aria-labelledby="research-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Research</p>
+      <h2 class="suite-title reveal" id="research-title">A public observatory.</h2>
+
+      <div class="research__grid reveal">
+        <div>
+          <div class="pane__head">
+            <h3 class="product__mark--typeset" style="margin:0">wAether</h3>
+            <span class="badge badge--live">Live research product</span>
+          </div>
+          <p class="lede pane__lede">A live observatory of solar, galactic, and terrestrial telemetry, built on official government data sources &mdash; named because the live site names them.</p>
+          <div class="actions" style="margin-top:28px">
+            <a class="btn btn--secondary" href="https://www.waether.space" rel="noopener">Open wAether</a>
+          </div>
+        </div>
+        <div>
+          <ul class="sources" aria-label="Data sources">
+            <li>NOAA SWPC</li><li>USGS</li><li>NASA DONKI</li><li>NOAA OVATION</li>
+          </ul>
+          <p class="caption" style="margin-top:24px">Pricing starts at $4.99/month or $49.99/year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPANY: current activity, research and validation ──── -->
+  <section class="room room--alt" id="company" aria-labelledby="company-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Current activity</p>
+      <h2 class="suite-title reveal" id="company-title">Validation is labeled as validation.</h2>
+      <p class="lede reveal" style="margin-top:24px;max-width:60ch">Pilots are labeled as pilots. A public page is not a completed experiment. Work in progress is listed as work in progress.</p>
+
+      <ul class="rail reveal">
+        <li><span class="rail__name">TruVector</span> &mdash; <span class="rail__note">validation and pilot development.</span></li>
+        <li><span class="rail__name">NSF SBIR Project Pitch</span> &mdash; <span class="rail__note">in preparation. Pursued, not awarded.</span></li>
+        <li><span class="rail__name">ResearchOne</span> &mdash; <span class="rail__note">private beta.</span></li>
+        <li><span class="rail__name">SAVR</span> &mdash; <span class="rail__note">web beta and Android testing.</span></li>
+        <li><span class="rail__name">Golden Goose Studio</span> &mdash; <span class="rail__note">storefront in beta, open at Golden Goose Tees; unmarketed, first order still ahead.</span></li>
+        <li><span class="rail__name">wAether</span> &mdash; <span class="rail__note">live.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── FUNDING ────────────────────────────────────────────── -->
+  <section class="room" id="funding" aria-labelledby="funding-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Funding</p>
+      <h2 class="suite-title reveal" id="funding-title">Two tracks, kept unmixed.</h2>
+
+      <div class="tracks">
+        <div class="track reveal">
+          <h3 class="room-title">Track A &mdash; TruVector research funding</h3>
+          <p style="margin-top:18px">An NSF SBIR Project Pitch is in preparation. It is being pursued, not awarded. The commercial applications are not the SBIR work.</p>
+          <div class="actions" style="margin-top:24px">
+            <a class="btn btn--secondary" href="/investors#request">Request TruVector Technical Brief</a>
+          </div>
+        </div>
+
+        <div class="track reveal">
+          <h3 class="room-title">Track B &mdash; Company investment</h3>
+          <p style="margin-top:18px">Pre-seed and strategic capital. Use of funds, by category:</p>
+          <ul>
+            <li>TruVector validation and pilot operations</li>
+            <li>ResearchOne private-beta hardening</li>
+            <li>SAVR launch: evidence, evaluation, and documentation</li>
+            <li>Company operations</li>
+          </ul>
+          <div class="actions" style="margin-top:24px">
+            <a class="btn btn--primary" href="/investors#request">Request Investor Materials</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────────── -->
+  <section class="room room--alt" id="contact" aria-labelledby="contact-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Contact</p>
+      <h2 class="suite-title reveal" id="contact-title">Johnson City, Tennessee.</h2>
+
+      <div class="contact__grid reveal">
+        <div class="contact__col">
+          <h3>General</h3>
+          <ul><li><a href="mailto:brandon@intellmeai.com">brandon@intellmeai.com</a></li></ul>
+        </div>
+        <div class="contact__col">
+          <h3>Security</h3>
+          <ul>
+            <li><a href="mailto:security@intellmeai.com">security@intellmeai.com</a></li>
+            <li><a href="/.well-known/security.txt">security.txt</a></li>
+          </ul>
+        </div>
+        <div class="contact__col">
+          <h3>Investors</h3>
+          <ul><li><a href="/investors#request">Request materials</a></li></ul>
+        </div>
+        <div class="contact__col">
+          <h3>Public work</h3>
+          <ul><li><a href="https://github.com/GooseyPrime" rel="noopener">GitHub &mdash; GooseyPrime</a></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>

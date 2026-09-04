@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+interface Props { title: string; description: string; path: string; heading: string; updated: string; }
+const { title, description, path, heading, updated } = Astro.props;
+---
+<Base title={title} description={description} path={path}>
+  <section class="room" style="padding-top:88px;padding-bottom:56px">
+    <div class="suite">
+      <p class="kicker">Legal</p>
+      <h1 class="suite-title">{heading}</h1>
+      <hr class="rule--champagne" style="margin-top:28px" />
+      <p class="caption" style="margin-top:24px">InTellMe and its products and services &middot; Last updated {updated}</p>
+    </div>
+  </section>
+  <hr class="rule" />
+  <section class="room" style="padding-top:56px">
+    <div class="suite">
+      <div class="legal"><slot /></div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .legal { max-width: 68ch; }
+  .legal h2 {
+    font-family: var(--display); font-variation-settings: 'opsz' 48;
+    font-size: clamp(1.3rem, 2vw, 1.6rem); font-weight: 500; color: var(--ivory);
+    margin: 56px 0 16px; padding-top: 28px; border-top: 1px solid var(--bronze-edge);
+    letter-spacing: -0.01em;
+  }
+  .legal h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+  .legal h3 {
+    font-family: var(--body); font-weight: 500; font-size: 1rem;
+    letter-spacing: 0.02em; color: var(--ivory); margin: 32px 0 12px;
+  }
+  .legal p { font-size: 16px; line-height: 1.68; color: var(--parchment); }
+  .legal ul { margin: 0 0 1.15em; padding-left: 1.1em; }
+  .legal li { font-size: 16px; line-height: 1.68; color: var(--parchment); margin-bottom: 8px; }
+  .legal li::marker { color: var(--stone-text); }
+  .legal .allcaps { font-size: 14px; letter-spacing: 0.01em; color: var(--stone-text); }
+</style>
