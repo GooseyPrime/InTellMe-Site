@@ -62,17 +62,25 @@ function errorPage(message) {
 <meta name="robots" content="noindex">
 <title>Request not sent — InTellMe</title>
 <style>
-  :root { color-scheme: dark; }
+  :root {
+    color-scheme: dark;
+    --obsidian: #0C0B0A;
+    --bronze-edge: #2A241C;
+    --bronze-edge-hot: #3A3228;
+    --champagne: #C6A36A;
+    --ivory: #F2EBE0;
+    --parchment: #D6CFC3;
+  }
   body { margin:0; min-height:100vh; display:grid; place-items:center; padding:32px;
-         background:#0d0c0b; color:#f2ede4;
+         background:var(--obsidian); color:var(--ivory);
          font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
   main { max-width:52ch; }
   h1 { font:400 30px/1.25 ui-serif,Georgia,"Times New Roman",serif; margin:0 0 20px; }
-  p { margin:0 0 18px; color:#c8c0b3; }
-  a { color:#e8c97a; }
-  .back { display:inline-block; margin-top:14px; padding:12px 20px; border:1px solid #4a3f2c;
-          border-radius:1px; color:#f2ede4; text-decoration:none; }
-  .back:hover { border-color:#e8c97a; }
+  p { margin:0 0 18px; color:var(--parchment); }
+  a { color:var(--champagne); }
+  .back { display:inline-block; margin-top:14px; padding:12px 20px; border:1px solid var(--bronze-edge);
+          border-radius:1px; color:var(--ivory); text-decoration:none; }
+  .back:hover { border-color:var(--bronze-edge-hot); }
 </style>
 </head><body><main>
 <h1>The request was not sent.</h1>

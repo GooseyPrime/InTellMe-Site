@@ -258,10 +258,3 @@ import Base from '../layouts/Base.astro';
   }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 </style>
-
-<script is:inline>
-  (function () {
-    var f = document.getElementById('investor-form');
-    if (f) document.getElementById('_started').value = String(Date.now());
-  })();
-</script>

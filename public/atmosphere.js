@@ -4,6 +4,9 @@
   'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  var started = document.getElementById('_started');
+  if (started) started.value = String(Date.now());
+
   /* --- sticky nav: background only after 8px of scroll ------- */
   var nav = document.getElementById('nav');
   if (nav) {
