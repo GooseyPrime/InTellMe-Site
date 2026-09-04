@@ -223,8 +223,22 @@ Confirmed. Investor and research oriented, with member access through to the Emm
 backend, and no mention of any funding body. Page-by-page plan in the accompanying
 message; build starts next, in the separate repository.
 
-### H10 — Hero imagery
-Brandon is producing the image. The current abstract material study holds the slot.
+### H10 — Hero imagery — **CLOSED**
+Brandon supplied the image: gold particle streaks curling from laminar into a
+vortex on near-black — flow made visible, which is what the site argues for.
+
+It was graded before shipping rather than dropped in as-is. Measured against the
+hero veil, the raw frame put the headline at **2.85:1** where a bright streak
+crossed it, and on small screens, where the copy spans nearly the full width, the
+background was brighter than the text — **0.86:1**, unreadable. Three changes:
+highlights roll toward candle instead of clipping to white (the palette has no
+white), the left third is pulled down so the headline sits on near-black, and the
+blown edge no longer bleeds off-frame. Small screens get an additional flat scrim
+in CSS rather than a crushed image, so the picture survives at phone size.
+
+Result: **6.45:1** on desktop and **6.03:1** on mobile at the worst pixel under any
+line of copy, against a 4.5:1 requirement. The social card is cut from the same
+frame.
 
 ---
 

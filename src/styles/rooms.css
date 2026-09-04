@@ -97,6 +97,16 @@
       transparent 86%),
     linear-gradient(to top, var(--obsidian) 0%, transparent 42%);
 }
+/* Small screens: the copy spans nearly the full width, so it crosses the bright
+   part of the plate that the horizontal gradient alone does not cover. An extra
+   flat scrim holds every line at or above 6:1 there. */
+@media (max-width: 1023px) {
+  .hero__veil::after {
+    content: ''; position: absolute; inset: 0;
+    background: color-mix(in srgb, var(--obsidian) 45%, transparent);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero__veil { animation: breath var(--t-breath) var(--ease-in-out-soft) infinite; }
 }
