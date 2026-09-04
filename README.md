@@ -53,7 +53,7 @@ Delivery is Mailjet Send API v3.1, the sender already in use for the storefront.
 |----------|----------|---------|
 | `MJ_APIKEY_PUBLIC` | yes | — |
 | `MJ_APIKEY_PRIVATE` | yes | — |
-| `INVESTOR_INBOX` | no | `brandon@intellmeai.com` |
+| `INVESTOR_INBOX` | no | `info@intellmeai.com` |
 | `INVESTOR_FROM` | no | `no-reply@intellmeai.com` |
 
 **`intellmeai.com` must be added and validated as a sending domain in Mailjet**, with

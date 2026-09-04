@@ -12,7 +12,7 @@
  * Configuration (Vercel project environment variables):
  *   MJ_APIKEY_PUBLIC    required — Mailjet API key
  *   MJ_APIKEY_PRIVATE   required — Mailjet secret key
- *   INVESTOR_INBOX      optional — defaults to brandon@intellmeai.com
+ *   INVESTOR_INBOX      optional — defaults to info@intellmeai.com
  *   INVESTOR_FROM       optional — defaults to no-reply@intellmeai.com
  *
  * The sending domain must be validated in Mailjet with SPF and DKIM before
@@ -30,7 +30,7 @@
  * a JSON blob on a dead URL.
  */
 
-const INBOX = process.env.INVESTOR_INBOX || 'brandon@intellmeai.com';
+const INBOX = process.env.INVESTOR_INBOX || 'info@intellmeai.com';
 const FROM = process.env.INVESTOR_FROM || 'no-reply@intellmeai.com';
 const MIN_FILL_MS = 2500;
 const MAX_FIELD = 4000;
