@@ -338,3 +338,11 @@
 }
 .footer__address a { color: var(--parchment); text-decoration: underline; text-decoration-color: var(--bronze-edge-hot); text-underline-offset: 3px; }
 .footer__address a:hover { color: var(--ivory); text-decoration-color: var(--champagne); }
+
+/* --- official product lockups carry their own name -------------- */
+.product__lockup { width: auto; height: 52px; object-fit: contain; margin-bottom: 22px; }
+@media (min-width: 1024px) { .product__lockup { height: 62px; } }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}

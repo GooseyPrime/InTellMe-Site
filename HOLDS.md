@@ -211,8 +211,11 @@ same face. The social card carries the wordmark, not a mark.
 
 Fraunces is unchanged for headings. It is only the wordmark that moved to the sans.
 
-The four remaining product marks — TruVector, wAether, and vector versions of the SAVR
-and Golden Goose crests — Brandon is supplying.
+Brandon supplied the official lockups for **SAVR, Golden Goose Tools, and Golden Goose
+Tees**. Each was keyed off its background to transparency, trimmed, and sized at three
+densities. Because each lockup contains its own name, it now replaces the typeset
+heading in that product room; the heading survives for screen readers and document
+structure. Still outstanding: **TruVector** and **wAether**, which stay typeset.
 
 ### H5 — truvector.science
 Confirmed. Investor and research oriented, with member access through to the Emma
