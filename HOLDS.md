@@ -7,14 +7,14 @@ round is marked **CLOSED** with what was done. What remains is short and specifi
 
 ## Closed this round
 
-### H0 — Golden Goose Studio vs Golden Goose Tees — **CLOSED**
+### H0 — Golden Goose Tees Studio vs Golden Goose Tees Studio — **CLOSED**
 `goldengoosestudio.com` does not exist. The live storefront is `goldengoosetees.com`,
-whose own page title reads *"Golden Goose Tees — AI Custom Apparel Studio,"* and the
+whose own page title reads *"Golden Goose Tees Studio — AI Custom Apparel Studio,"* and the
 repository is `goldengoosetees-studio`. All three now reconcile on the site the same
 way the product already describes itself:
 
-> **Golden Goose Studio** is the platform — AI design, Printful-integrated placement,
-> mockup, checkout, fulfillment. **Golden Goose Tees** is the first storefront built on it.
+> **Golden Goose Tees Studio** is the platform — AI design, Printful-integrated placement,
+> mockup, checkout, fulfillment. **Golden Goose Tees Studio** is the first storefront built on it.
 
 The badge moved from *Coming soon* to **Live**, and the room now carries a real button
 to `goldengoosetees.com`. **Confirm:** is checkout actually taking live orders today? The
@@ -54,7 +54,7 @@ years, no awards.**
 ### H3 — InTellMe mark — **decision put to Brandon**
 Three candidates rendered at real sizes on the site ground; see the comparison sheet.
 Recommendation is the gold triangle. The other four marks (InTellMe wordmark,
-TruVector, Golden Goose Studio, wAether) stay typeset in Fraunces until he supplies
+TruVector, Golden Goose Tees Studio, wAether) stay typeset in Fraunces until he supplies
 originals, which he has said he will.
 
 ### Build decision 4 — Analytics — **CLOSED**
@@ -125,7 +125,7 @@ Planned, two Hypothesis. A companion block, *Where this sits against published w
 states the distinction from policy-gating approaches directly rather than waiting for a
 reviewer to find the overlap themselves.
 
-### Golden Goose Studio badge — **corrected**
+### Golden Goose Tees Studio badge — **corrected**
 Stripe has always been in live mode, but the storefront has never been marketed, has no
 testers, still has known failures, and has never taken an order. The badge is now
 **Storefront in beta**, and both the homepage and the investor page say plainly that it
@@ -200,23 +200,19 @@ resolved against the build, and each external product link was confirmed to answ
 
 ## Still open
 
-### H3 — the InTellMe mark — **provisionally wired, awaiting confirmation**
-The triangle was rejected, so it has been removed rather than left in a branch that is
-supposed to be reviewable. In its place, as a proposal in context: **the Interval** — a
-capital I that is simultaneously a measured value with its uncertainty. The caps are the
-bounds, the champagne bead is the estimate. Drawn from measurement, which is both the
-founder's discipline and the product's thesis, and deliberately none of the AI clichés.
+### H3 — the InTellMe mark — **closed: no symbol**
+Two symbol directions were rejected, and the display serif was rejected for the
+wordmark. The identity is now the name alone, set in the sans already used for body
+text: clean, no ornament, no glyph. There is no logo file to maintain and nothing to
+misread at small sizes.
 
-It is now the nav mark, the favicon at every size, and the social card. As vector, so it
-is sharp everywhere and weighs under a kilobyte.
+The favicon and app icon are the wordmark's opening letters on the site ground, in the
+same face. The social card carries the wordmark, not a mark.
 
-Three state variants ship alongside it — `intellme-state-allow`, `-review`, `-block` —
-where the bead's height inside the interval is the decision. The logo can be used as
-live status inside the product. Nothing on this site uses them yet.
+Fraunces is unchanged for headings. It is only the wordmark that moved to the sans.
 
-**This is a proposal, not a decision.** If Brandon prefers the slab drawing, or rejects
-the direction, it is one file and three references to change. The other four marks —
-InTellMe wordmark, TruVector, Golden Goose Studio, wAether — he is supplying.
+The four remaining product marks — TruVector, wAether, and vector versions of the SAVR
+and Golden Goose crests — Brandon is supplying.
 
 ### H5 — truvector.science
 Confirmed. Investor and research oriented, with member access through to the Emma

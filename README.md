@@ -73,7 +73,7 @@ These are enforced by the design specification and should stay true:
 - Validation is called validation. Pilots are called pilots. Nothing is described as
   production-proven, fraud-predictive, or commercially validated.
 - The public portfolio is: InTellMe → TruVector, ResearchOne → SAVR, Golden Goose
-  Tools, Golden Goose Studio → wAether. Nothing else appears in nav, footer, sitemap,
+  Tools, Golden Goose Tees Studio → wAether. Nothing else appears in nav, footer, sitemap,
   or meta.
 - Never use the nav label "Our Apps."
 - InTellMe is a trade name, not an entity. Never write "Inc.", "LLC", "Corp.", or

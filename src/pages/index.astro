@@ -173,12 +173,14 @@ import Base from '../layouts/Base.astro';
         </article>
 
         <article class="product reveal">
-          <span class="product__mark--typeset">Studio</span>
+          <img class="product__mark" src="/assets/logos/golden-goose-tools.png"
+               srcset="/assets/logos/golden-goose-tools.png 1x, /assets/logos/golden-goose-tools@2x.png 2x, /assets/logos/golden-goose-tools@3x.png 3x"
+               width="49" height="40" alt="" />
           <div class="product__meta">
-            <h3 class="room-title" style="font-size:1.3rem">Golden Goose Studio</h3>
+            <h3 class="room-title" style="font-size:1.3rem">Golden Goose Tees Studio</h3>
             <span class="badge">Storefront in beta</span>
           </div>
-          <p class="product__body">AI-assisted product design with Printful-integrated placement, mockup, checkout, and fulfillment. Its first storefront, Golden Goose Tees, is open and connected to live payments; it has not yet been marketed and has not taken a first order.</p>
+          <p class="product__body">AI-assisted apparel design, with Printful-integrated placement, mockup, checkout, and fulfillment. The storefront is open on live payments; it has not been marketed and has not taken a first order.</p>
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://www.goldengoosetees.com/" rel="noopener">Open the storefront <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
@@ -226,7 +228,7 @@ import Base from '../layouts/Base.astro';
         <li><span class="rail__name">NSF SBIR Project Pitch</span> &mdash; <span class="rail__note">in preparation. Pursued, not awarded.</span></li>
         <li><span class="rail__name">ResearchOne</span> &mdash; <span class="rail__note">private beta.</span></li>
         <li><span class="rail__name">SAVR</span> &mdash; <span class="rail__note">web beta and Android testing.</span></li>
-        <li><span class="rail__name">Golden Goose Studio</span> &mdash; <span class="rail__note">storefront in beta, open at Golden Goose Tees; unmarketed, first order still ahead.</span></li>
+        <li><span class="rail__name">Golden Goose Tees Studio</span> &mdash; <span class="rail__note">storefront in beta; unmarketed, first order still ahead.</span></li>
         <li><span class="rail__name">wAether</span> &mdash; <span class="rail__note">live.</span></li>
       </ul>
     </div>
@@ -270,25 +272,49 @@ import Base from '../layouts/Base.astro';
       <p class="kicker">Contact</p>
       <h2 class="suite-title reveal" id="contact-title">Johnson City, Tennessee.</h2>
 
-      <div class="contact__grid reveal">
-        <div class="contact__col">
-          <h3>General</h3>
-          <ul><li><a href="mailto:brandon@intellmeai.com">brandon@intellmeai.com</a></li></ul>
-        </div>
-        <div class="contact__col">
-          <h3>Security</h3>
-          <ul>
-            <li><a href="mailto:security@intellmeai.com">security@intellmeai.com</a></li>
-            <li><a href="/.well-known/security.txt">security.txt</a></li>
+      <div class="contact reveal">
+        <div class="contact__primary">
+          <p class="contact__name">InTellMe</p>
+          <address class="contact__address">
+            326 Delaware Street<br />
+            Johnson City, TN 37604<br />
+            United States
+          </address>
+          <ul class="contact__lines">
+            <li><span class="contact__label">Telephone</span><a href="tel:+17473221977">(747) 322-1977</a></li>
+            <li><span class="contact__label">General</span><a href="mailto:info@intellmeai.com">info@intellmeai.com</a></li>
           </ul>
         </div>
-        <div class="contact__col">
-          <h3>Investors</h3>
-          <ul><li><a href="/investors#request">Request materials</a></li></ul>
-        </div>
-        <div class="contact__col">
-          <h3>Public work</h3>
-          <ul><li><a href="https://github.com/GooseyPrime" rel="noopener">GitHub &mdash; GooseyPrime</a></li></ul>
+
+        <div class="contact__directory">
+          <div class="contact__col">
+            <h3>Investors</h3>
+            <ul>
+              <li><a href="/investors#request">Request materials</a></li>
+              <li><a href="mailto:info@intellmeai.com?subject=Investor%20materials">info@intellmeai.com</a></li>
+            </ul>
+          </div>
+          <div class="contact__col">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="mailto:support@intellmeai.com">support@intellmeai.com</a></li>
+              <li><a href="mailto:billing@intellmeai.com">billing@intellmeai.com</a></li>
+            </ul>
+          </div>
+          <div class="contact__col">
+            <h3>Security</h3>
+            <ul>
+              <li><a href="mailto:security@intellmeai.com">security@intellmeai.com</a></li>
+              <li><a href="/.well-known/security.txt">security.txt</a></li>
+            </ul>
+          </div>
+          <div class="contact__col">
+            <h3>Public work</h3>
+            <ul>
+              <li><a href="https://github.com/GooseyPrime" rel="noopener">github.com/GooseyPrime</a></li>
+              <li><a href="/accessibility">Accessibility</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
