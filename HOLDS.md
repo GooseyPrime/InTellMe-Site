@@ -7,7 +7,7 @@ round is marked **CLOSED** with what was done. What remains is short and specifi
 
 ## Closed this round
 
-### H0 — Golden Goose Tees Studio vs Golden Goose Tees Studio — **CLOSED**
+### H0 — Golden Goose Studio vs Golden Goose Tees Studio — **CLOSED**
 `goldengoosestudio.com` does not exist. The live storefront is `goldengoosetees.com`,
 whose own page title reads *"Golden Goose Tees Studio — AI Custom Apparel Studio,"* and the
 repository is `goldengoosetees-studio`. All three now reconcile on the site the same
@@ -51,11 +51,10 @@ public, GitHub handle, city. It names the gap — bandwidth, and no commercial
 function — rather than hiding it. **Nothing invented: no employers, no degrees, no
 years, no awards.**
 
-### H3 — InTellMe mark — **decision put to Brandon**
-Three candidates rendered at real sizes on the site ground; see the comparison sheet.
-Recommendation is the gold triangle. The other four marks (InTellMe wordmark,
-TruVector, Golden Goose Tees Studio, wAether) stay typeset in Fraunces until he supplies
-originals, which he has said he will.
+### H3 — InTellMe mark — **CLOSED: no symbol**
+Two symbol directions were rejected, and the display serif was rejected for the
+wordmark. The identity is now the name alone, set in the same sans as body text.
+There is no symbol file to maintain and nothing to misread at small sizes.
 
 ### Build decision 4 — Analytics — **CLOSED**
 The InTellMe measurement ID was already in the old site's source and is confirmed real:
