@@ -10,7 +10,7 @@
     var f = document.getElementById('investor-form');
     if (!f) return;
     var t = document.getElementById('_started');
-    if (t) t.value = String(Date.now());
+    if (t && !t.value) t.value = String(Date.now());
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', stamp);
