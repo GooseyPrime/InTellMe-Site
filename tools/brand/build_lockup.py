@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Build the InTellMe stacked lockup: corroboration mark above, wordmark below,
 wordmark optically justified to the exact drawn width of the mark."""
+from pathlib import Path
+import argparse
+
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
@@ -19,12 +22,14 @@ MARK_Y1 = CY + R + SW / 2       # 66.5
 MARK_W = MARK_X1 - MARK_X0      # 89.0
 MARK_H = MARK_Y1 - MARK_Y0      # 59.0
 
-FONT = "/tmp/plexsans500.ttf"
+ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_FONT = ROOT / "public/assets/fonts/plex-sans-500.woff2"
+DEFAULT_OUT = ROOT / "public/assets/logos/intellme-lockup.svg"
 TEXT = "InTellMe"
 
 
-def wordmark_paths(cap_target):
-    font = TTFont(FONT)
+def wordmark_paths(cap_target, font_path):
+    font = TTFont(font_path)
     upm = font["head"].unitsPerEm
     cap = font["OS/2"].sCapHeight
     gs = font.getGlyphSet()
@@ -54,8 +59,8 @@ def wordmark_paths(cap_target):
     return paths, pen_x, track_em, cap_target
 
 
-def build(cap_target, path):
-    paths, width, track_em, cap = wordmark_paths(cap_target)
+def build(cap_target, path, font_path):
+    paths, width, track_em, cap = wordmark_paths(cap_target, font_path)
     gap = 15.0                                      # mark baseline -> cap top
     base_y = MARK_H + gap + cap                     # wordmark baseline
     total_h = base_y                                # descenders unused in "InTellMe"
@@ -80,12 +85,20 @@ def build(cap_target, path):
            f'width="{MARK_W:.4g}" height="{total_h:.4g}" '
            f'role="img" aria-label="InTellMe">\n  '
            + "\n  ".join(body) + "\n</svg>\n")
-    open(path, "w").write(svg)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(svg, encoding="utf-8")
     print(f"{path}: cap {cap}  track {track_em:+.4f} em  "
           f"wordmark width {width:.2f} (target {MARK_W})  canvas {MARK_W}x{total_h:.2f}")
 
 
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cap", type=float, default=15.2)
+    parser.add_argument("--font", type=Path, default=DEFAULT_FONT)
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    args = parser.parse_args()
+    build(args.cap, args.out, args.font)
+
+
 if __name__ == "__main__":
-    import sys
-    for cap in (15.2,):
-        build(cap, '/home/claude/lockup/intellme-lockup.svg')
+    main()

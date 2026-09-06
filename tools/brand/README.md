@@ -29,9 +29,10 @@ dependency.
 | Script | Output |
 | --- | --- |
 | `build_lockup.py` | `public/assets/logos/intellme-lockup.svg` |
-| `build_icons.py` | `public/assets/logos/intellme.svg`, `public/favicon.svg`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-512.png` |
+| `build_icons.py` | `public/assets/logos/intellme.svg`, `public/favicon.svg`, `public/favicon.ico`, `public/favicon-32.png`, `public/apple-touch-icon.png`, `public/icon-512.png` |
 | `build_og.py` | `public/assets/imagery/og.jpg` |
 
-They expect `fontTools`, `cairosvg` and `Pillow`, and read the font files from
-`public/assets/fonts/`. Outputs are committed; re-run only when the mark or the
-wordmark changes.
+They expect `fontTools`, `cairosvg` and `Pillow`, and resolve all inputs and
+outputs relative to the repository root. Font sources are read from
+`public/assets/fonts/` (WOFF2 or TTF). Outputs are committed; re-run only when
+the mark or the wordmark changes.
