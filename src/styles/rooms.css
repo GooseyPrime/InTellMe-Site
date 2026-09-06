@@ -20,9 +20,12 @@
   border-bottom-color: var(--bronze-edge);
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; }
-.nav__brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-/* The wordmark is set in the sans, not the display serif, and stands alone.
-   No symbol: the name carries the identity. */
+.nav__brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+/* The mark reads as corroboration: two independent circles, and the agreement
+   between them is the only part that carries colour. The wordmark beside it is
+   set in the sans, not the display serif, so the brand line stays quiet. */
+.nav__mark { display: block; width: auto; height: 21px; }
+@media (min-width: 1024px) { .nav__mark { height: 23px; } }
 .nav__wordmark {
   font-family: var(--body); font-weight: 500;
   font-size: 18px; line-height: 1;
