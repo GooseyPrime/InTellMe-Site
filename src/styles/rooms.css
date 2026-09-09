@@ -138,8 +138,8 @@
   }
 }
 .pane__head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
-.product__lockup--sm { height: 76px; margin-bottom: 0; }
-@media (min-width: 1024px) { .product__lockup--sm { height: 88px; } }
+.product__lockup.product__lockup--sm { height: 76px; margin-bottom: 0; }
+@media (min-width: 1024px) { .product__lockup.product__lockup--sm { height: 88px; } }
 .pane__lede { margin-top: 20px; }
 .states {
   display: flex; flex-wrap: wrap; gap: 10px;
@@ -319,7 +319,7 @@
 /* Label column is sized in the label's own em, not the body's ch, so the
    values line up under each other whatever the label reads. */
 .contact__lines li {
-  display: grid; grid-template-columns: 1fr; gap: 5px;
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 5px 16px; align-items: baseline;
   padding: 14px 0; border-top: 1px solid var(--bronze-edge);
 }
 .contact__lines li:last-child { border-bottom: 1px solid var(--bronze-edge); }
