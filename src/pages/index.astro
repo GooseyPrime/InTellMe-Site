@@ -46,7 +46,8 @@ import Base from '../layouts/Base.astro';
           </ul>
           <p style="margin-top:28px">TruVector sits in front of consequential action. It weighs evidence, independence, and disagreement, then issues a decision a downstream system can obey.</p>
           <div class="actions" style="margin-top:28px">
-            <a class="btn btn--secondary" href="/investors#request">Request TruVector Technical Brief</a>
+            <a class="btn btn--secondary" href="https://truvector.science" rel="noopener">Open TruVector</a>
+            <a class="btn btn--tertiary" href="/investors#request">Request the Technical Brief <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
         </div>
 
@@ -197,7 +198,10 @@ import Base from '../layouts/Base.astro';
       <div class="research__grid reveal">
         <div>
           <div class="pane__head">
-            <h3 class="product__mark--typeset" style="margin:0">wAether</h3>
+            <img class="product__lockup product__lockup--sm" src="/assets/logos/waether.png"
+                 srcset="/assets/logos/waether.png 1x, /assets/logos/waether@2x.png 2x, /assets/logos/waether@3x.png 3x"
+                 width="72" height="72" alt="" />
+            <h3 class="visually-hidden">wAether</h3>
             <span class="badge badge--live">Live research product</span>
           </div>
           <p class="lede pane__lede">A live observatory of solar, galactic, and terrestrial telemetry, built on official government data sources &mdash; named because the live site names them.</p>
@@ -249,6 +253,48 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- ── FUNDING ────────────────────────────────────────────── -->
+  <!-- ── PROPERTIES: every live address, in one place ────────── -->
+  <section class="room" id="properties" aria-labelledby="properties-title">
+    <div class="suite suite--flagship">
+      <p class="kicker">Where the work lives</p>
+      <h2 class="suite-title reveal" id="properties-title">Every property, and its address.</h2>
+      <p class="lede reveal" style="margin-top:18px;max-width:64ch">Nothing here is a mockup. Each of these is a running site you can open now, at the stage it is actually in.</p>
+
+      <ul class="properties reveal">
+        <li class="property">
+          <a class="property__link" href="https://truvector.science" rel="noopener">truvector.science</a>
+          <span class="property__name">TruVector</span>
+          <span class="property__note">Pre-execution arbitration of AI assertions. Validation and pilot development.</span>
+        </li>
+        <li class="property">
+          <a class="property__link" href="https://www.waether.space" rel="noopener">waether.space</a>
+          <span class="property__name">wAether</span>
+          <span class="property__note">Observatory of solar, galactic and terrestrial telemetry. Live, paid.</span>
+        </li>
+        <li class="property">
+          <a class="property__link" href="https://savr.cam" rel="noopener">savr.cam</a>
+          <span class="property__name">SAVR</span>
+          <span class="property__note">Kitchen inventory and recipe planning. Web beta, Android in testing.</span>
+        </li>
+        <li class="property">
+          <a class="property__link" href="https://www.goldengoosetools.com" rel="noopener">goldengoosetools.com</a>
+          <span class="property__name">Golden Goose Tools</span>
+          <span class="property__note">Instant technical SEO audit of a live page. Live.</span>
+        </li>
+        <li class="property">
+          <a class="property__link" href="https://www.goldengoosetees.com" rel="noopener">goldengoosetees.com</a>
+          <span class="property__name">Golden Goose Tees Studio</span>
+          <span class="property__note">AI-assisted apparel design and fulfillment. Storefront in beta.</span>
+        </li>
+        <li class="property">
+          <a class="property__link" href="https://www.researchone.io/" rel="noopener">researchone.io</a>
+          <span class="property__name">ResearchOne</span>
+          <span class="property__note">Evidence-governed research workspace. Private beta.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <section class="room" id="funding" aria-labelledby="funding-title">
     <div class="suite suite--flagship">
       <p class="kicker">Funding</p>
@@ -284,7 +330,7 @@ import Base from '../layouts/Base.astro';
   <section class="room room--alt" id="contact" aria-labelledby="contact-title">
     <div class="suite suite--flagship">
       <p class="kicker">Contact</p>
-      <h2 class="suite-title reveal" id="contact-title">Johnson City, Tennessee.</h2>
+      <h2 class="suite-title reveal" id="contact-title">Reach the people doing the work.</h2>
 
       <div class="contact reveal">
         <div class="contact__primary">
