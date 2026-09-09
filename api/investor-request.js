@@ -30,7 +30,8 @@
  * a JSON blob on a dead URL.
  */
 
-const INBOX = process.env.INVESTOR_INBOX || 'info@intellmeai.com';
+const DIRECT_EMAIL = 'info@intellmeai.com';
+const INBOX = process.env.INVESTOR_INBOX || DIRECT_EMAIL;
 const FROM = process.env.INVESTOR_FROM || 'no-reply@intellmeai.com';
 const MIN_FILL_MS = 2500;
 const MAX_FIELD = 4000;
@@ -86,9 +87,13 @@ function errorPage(message) {
 <h1>The request was not sent.</h1>
 <p>${safe}</p>
 <p>Nothing was lost — the details are still in the form if you go back, and email always works:
-<a href="mailto:${INBOX}?subject=Investor%20materials">${INBOX}</a>.</p>
+<a href="mailto:${DIRECT_EMAIL}?subject=Investor%20materials">${DIRECT_EMAIL}</a>.</p>
 <a class="back" href="/investors#request">Back to the form</a>
 </main></body></html>`;
+}
+
+function isUnverifiedSender(detail) {
+  return /sender|from/i.test(detail) && /domain|verify|validat/i.test(detail);
 }
 
 function fail(req, res, status, message) {
@@ -193,6 +198,10 @@ export default async function handler(req, res) {
     });
     if (!response.ok) {
       const detail = await response.text().catch(() => '');
+      if (isUnverifiedSender(detail)) {
+        return fail(req, res, 503,
+          'The request form is not connected to a validated intellmeai.com sending domain yet, so this would not reach the inbox.');
+      }
       throw new Error(`Mailjet returned ${response.status} ${detail.slice(0, 300)}`);
     }
     const body = await response.json().catch(() => null);

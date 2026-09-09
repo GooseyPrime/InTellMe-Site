@@ -106,7 +106,22 @@ await handler(mkReq('POST', { name: 'Ann', email: 'a@b.co' }, 'text/html'), res)
 check('upstream mail failure reported honestly, not as success',
   res.statusCode === 502 && res.body.includes('has not reached anyone'), `status=${res.statusCode}`);
 
-// 12. No response is cacheable
+// 12. Unverified Mailjet sender domain still returns readable HTML naming direct email
+globalThis.fetch = async () => ({
+  ok: false,
+  status: 400,
+  text: async () => 'mj-001 sender domain is not validated for this From address'
+});
+res = mkRes();
+await handler(mkReq('POST', { name: 'Ann', email: 'a@b.co' }, 'text/html'), res);
+check('unverified sender domain returns readable HTML 503 naming info@intellmeai.com',
+  res.statusCode === 503 &&
+  res.body.startsWith('<!doctype html') &&
+  res.body.includes('info@intellmeai.com') &&
+  !res.body.trim().startsWith('{'),
+  `status=${res.statusCode}`);
+
+// 13. No response is cacheable
 check('responses are marked no-store', res.headers['cache-control'] === 'no-store');
 
 let failed = 0;
