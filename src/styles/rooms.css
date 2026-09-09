@@ -373,3 +373,10 @@
 .property__link--soon { color: var(--stone-text); border-bottom: none; }
 .property__name { font-family: var(--body); font-weight: 500; color: var(--ivory); }
 .property__note { color: var(--parchment); }
+
+/* ── Founder note ─────────────────────────────────────────────────
+   One column, one voice. The argument runs top to bottom; splitting it
+   across panes severed the sentence that connected the work to the
+   company, because the reader's eye had already left the column. */
+.founder { max-width: 68ch; margin-top: 44px; }
+.founder p + p { margin-top: 18px; }
