@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 ---
 <Base
   title="InTellMe"
-  description="InTellMe is a small research and software company in Johnson City, Tennessee. We check whether a claim is well supported before anyone has to act on it — and we build a few everyday tools from that work."
+  description="InTellMe is a small research company in Johnson City, Tennessee. We build a check that sits in front of AI systems that act on their own — and a few everyday products that grew out of that work."
   path="/"
 >
 
@@ -17,9 +17,9 @@ import Base from '../layouts/Base.astro';
     <div class="hero__veil" aria-hidden="true"></div>
 
     <div class="suite suite--flagship hero__inner">
-      <h1 class="hero-line" id="hero-line">Before a computer acts on a claim, you should be able to see why.</h1>
+      <h1 class="hero-line" id="hero-line">An autonomous AI system should show its work before it does anything that matters.</h1>
       <hr class="rule--champagne" />
-      <p class="hero-support">InTellMe is a research and software company in Johnson City, Tennessee. We build tools that check the evidence behind a claim &mdash; and a few everyday products that grew out of that work.</p>
+      <p class="hero-support">InTellMe is a research company in Johnson City, Tennessee. We build a check that sits in front of AI systems that act on their own &mdash; and a few everyday products that grew out of that work.</p>
       <div class="actions">
         <a class="btn btn--primary" href="#technology">See how TruVector works</a>
         <a class="btn btn--secondary" href="/investors">For investors</a>
@@ -34,7 +34,7 @@ import Base from '../layouts/Base.astro';
       <p class="kicker">Core technology</p>
       <h2 class="suite-title reveal" id="technology-title">The core work behind everything else.</h2>
 
-      <p class="lede reveal" style="margin-top:22px;max-width:66ch">Lane Vector is where the research notes live. TruVector is the product that came from that work. The method started in reaction-kinetics thinking and now helps decide whether evidence is strong enough before a system acts.</p>
+      <p class="lede reveal" style="margin-top:22px;max-width:66ch">Lane Vector is where the research notes live. TruVector is the product that came from that work. It sits in front of an AI system that is about to do something on its own and asks whether the evidence is strong enough.</p>
 
       <div class="flagship" style="margin-top:48px">
         <div class="flagship__pane reveal">
@@ -43,7 +43,7 @@ import Base from '../layouts/Base.astro';
             <span class="badge">Research notes, not a product listing</span>
           </div>
           <p class="lede pane__lede">Research notes on how intent and information change over time.</p>
-          <p style="margin-top:28px">This work treats signals as movement, not just counts. Direction and rate matter. The same independence rule from reaction kinetics applies here: one claim repeated five times is still one origin, not five independent confirmations.</p>
+          <p style="margin-top:28px">This work treats signals as movement, not just counts. Direction and rate matter. One story copied five times is still one source, not five independent confirmations.</p>
           <div class="actions" style="margin-top:28px">
             <a class="btn btn--secondary" href="https://www.lanevector.com" rel="noopener">Open Lane Vector</a>
           </div>
@@ -54,13 +54,13 @@ import Base from '../layouts/Base.astro';
             <h3 class="product__mark--typeset" style="margin:0">TruVector</h3>
             <span class="badge">Validation and pilot development</span>
           </div>
-          <p class="lede pane__lede">A check in front of action, so downstream systems can see whether a claim is supported enough.</p>
+          <p class="lede pane__lede">A check in front of an AI action, so you can see whether the system has real support for what it is about to do.</p>
           <ul class="states" aria-label="Decision states">
             <li>Allow</li><li>Review</li><li>Block</li>
           </ul>
-          <p style="margin-top:28px">TruVector sits before consequential actions. It weighs evidence, source independence, and disagreement, then returns a decision a downstream system can follow.</p>
+          <p style="margin-top:28px">TruVector sits before an AI system acts on its own. It weighs evidence, whether the sources are independent, and whether they disagree, then returns a decision the system can follow.</p>
           <p>Lane Vector is an earlier modeling name for part of this work. The public product name is TruVector. Research notes stay on lanevector.com, and this page is the source of record if they conflict.</p>
-          <p>It does not rely on source reputation alone. It scores evidence quality, disagreement, and independence under a policy someone can audit.</p>
+          <p>It does not rely on how famous a website is. It scores the quality of the evidence, disagreement, and independence under a rule someone can audit.</p>
           <div class="actions" style="margin-top:28px">
             <a class="btn btn--secondary" href="https://truvector.science" rel="noopener">Open TruVector</a>
             <a class="btn btn--tertiary" href="/investors#request">Request the Technical Brief <span class="arrow" aria-hidden="true">&#8594;</span></a>
@@ -95,7 +95,7 @@ import Base from '../layouts/Base.astro';
       <div class="technology-strip reveal" aria-label="Technology illustrations">
         <article class="illustration-card">
           <p class="illustration-card__label">Illustration</p>
-          <p class="illustration-card__body">An agent is about to file a record. The record waits until the evidence is strong enough to allow, or thin enough to send for review.</p>
+          <p class="illustration-card__body">An AI agent is about to file a record. The record waits until the evidence is strong enough to allow, or thin enough to send for review.</p>
         </article>
         <article class="illustration-card">
           <p class="illustration-card__label">Illustration</p>
@@ -157,12 +157,12 @@ import Base from '../layouts/Base.astro';
       <div class="flagship reveal" style="margin-top:64px;padding-top:48px;border-top:1px solid var(--bronze-edge)">
         <div class="flagship__pane">
           <h3 class="room-title">How this differs from nearby published work.</h3>
-          <p style="margin-top:18px">Pre-execution gating for AI systems is an active area. Some published work also uses an Allow / Deny / Escalate step in front of an agent action. From far away, the decision points can look similar.</p>
+          <p style="margin-top:18px">Putting a gate in front of an AI action is an active area. Some published work also uses an Allow / Deny / Escalate step before an agent acts. From far away, the decision points can look similar.</p>
         </div>
         <div class="flagship__pane">
           <p><strong>They are not the same decision.</strong> Those published approaches ask a permission question: is this actor allowed to take this action under this policy? That answer is a lookup, and it is right or wrong.</p>
-          <p>TruVector asks an evidence question: with conflicting sources that are not equally independent, how well is this claim supported, and is that support enough for the cost of acting? The answer is a judgement under uncertainty, with an explicit error bar.</p>
-          <p>Policy gating and evidential adjudication compose. A system can want both, and neither substitutes for the other.</p>
+          <p>TruVector asks an evidence question: with conflicting sources that are not equally independent, how well is this supported, and is that support enough for the cost of the AI acting? The answer is a judgement under uncertainty, with an explicit error bar.</p>
+          <p>A permission check and an evidence check can sit together. Neither replaces the other.</p>
         </div>
       </div>
     </div>
@@ -282,7 +282,7 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── FUNDING ────────────────────────────────────────────── -->
+  <!-- ── FUNDING ────────────────────────────────────── -->
   <!-- ── PROPERTIES: every live address, in one place ────────── -->
   <section class="room" id="properties" aria-labelledby="properties-title">
     <div class="suite suite--flagship">
@@ -294,12 +294,12 @@ import Base from '../layouts/Base.astro';
         <li class="property">
           <a class="property__link" href="https://www.lanevector.com" rel="noopener">lanevector.com</a>
           <span class="property__name">Lane Vector</span>
-          <span class="property__note">Research notes only, not a product listing. Kinematic modeling of intent and information dynamics carried over from chemical reaction kinetics.</span>
+          <span class="property__note">Research notes only, not a product listing.</span>
         </li>
         <li class="property">
           <a class="property__link" href="https://truvector.science" rel="noopener">truvector.science</a>
           <span class="property__name">TruVector</span>
-          <span class="property__note">The product built on that research: evidence, source independence and disagreement weighed before a consequential action. Validation and pilot development.</span>
+          <span class="property__note">The product built on that research: a check in front of an AI action. Validation and pilot development.</span>
         </li>
         <li class="property">
           <a class="property__link" href="https://www.waether.space" rel="noopener">waether.space</a>
@@ -324,7 +324,7 @@ import Base from '../layouts/Base.astro';
         <li class="property">
           <a class="property__link" href="https://www.researchone.io/" rel="noopener">researchone.io</a>
           <span class="property__name">ResearchOne</span>
-          <span class="property__note">Evidence-governed research workspace. Private beta.</span>
+          <span class="property__note">Research workspace that keeps sources attached. Private beta.</span>
         </li>
       </ul>
     </div>
@@ -361,7 +361,7 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
+  <!-- ── CONTACT ────────────────────────────────────── -->
   <section class="room room--alt" id="contact" aria-labelledby="contact-title">
     <div class="suite suite--flagship">
       <p class="kicker">Contact</p>
