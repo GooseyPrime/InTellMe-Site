@@ -40,9 +40,9 @@ import Base from '../layouts/Base.astro';
         <div class="flagship__pane reveal">
           <div class="pane__head">
             <h3 class="product__mark--typeset" style="margin:0">Lane Vector</h3>
-            <span class="badge">Research notes, not a product listing</span>
+            <span class="badge">Research notes</span>
           </div>
-          <p class="lede pane__lede">Research notes on how intent and information change over time.</p>
+          <p class="lede pane__lede">Research notes, not a product listing, on how intent and information change over time.</p>
           <p style="margin-top:28px">This work treats signals as movement, not just counts. Direction and rate matter. One story copied five times is still one source, not five independent confirmations.</p>
           <div class="actions" style="margin-top:28px">
             <a class="btn btn--secondary" href="https://www.lanevector.com" rel="noopener">Open Lane Vector</a>
@@ -116,17 +116,17 @@ import Base from '../layouts/Base.astro';
           <div class="maturity__row">
             <span class="maturity__name">Evidence object and decision path</span>
             <span class="maturity__note">The structured result a downstream system reads, and the Allow &middot; Review &middot; Block boundary it obeys. Schema and boundary are fixed and running.</span>
-            <span class="maturity__state"><span class="state state--implemented">Built</span></span>
+            <span class="maturity__state"><span class="state state--implemented">Implemented</span></span>
           </div>
           <div class="maturity__row">
             <span class="maturity__name">Contradiction and divergence</span>
             <span class="maturity__note">Detecting that sources disagree, and carrying that disagreement into the decision instead of averaging it away. Detectable and measured; calibration is not settled.</span>
-            <span class="maturity__state"><span class="state state--validating">Being tested</span></span>
+            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
           </div>
           <div class="maturity__row">
             <span class="maturity__name">Independence-aware evidence</span>
             <span class="maturity__note">Discounting agreement between sources that share an origin, so that one claim repeated five times does not score as five confirmations.</span>
-            <span class="maturity__state"><span class="state state--validating">Being tested</span></span>
+            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
           </div>
           <div class="maturity__row">
             <span class="maturity__name">Quorum</span>
@@ -136,20 +136,20 @@ import Base from '../layouts/Base.astro';
           <div class="maturity__row">
             <span class="maturity__name">AHE / HRA</span>
             <span class="maturity__note">Adjudication under conflicting evidence where no source is authoritative. Stated as a claim with a stated way to be wrong, and not yet demonstrated.</span>
-            <span class="maturity__state"><span class="state state--hypothesis">Idea, not shown</span></span>
+            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
           </div>
           <div class="maturity__row">
             <span class="maturity__name">Kinematic validation</span>
             <span class="maturity__note">Treating a claim's movement through evidence over time as a signal in its own right. The most speculative element here, and the reason the research is research.</span>
-            <span class="maturity__state"><span class="state state--hypothesis">Idea, not shown</span></span>
+            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
           </div>
         </div>
 
         <div class="maturity__key">
-          <div><b>Built</b> &mdash; runs and is measured</div>
-          <div><b>Being tested</b> &mdash; protocol written, results still partial</div>
+          <div><b>Implemented</b> &mdash; runs and is measured</div>
+          <div><b>Under validation</b> &mdash; protocol written, results still partial</div>
           <div><b>Planned</b> &mdash; specified, not built yet</div>
-          <div><b>Idea, not shown</b> &mdash; still a claim with a clear way to be wrong</div>
+          <div><b>Hypothesis</b> &mdash; still a claim with a clear way to be wrong</div>
         </div>
       </div>
 
