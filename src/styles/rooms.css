@@ -128,13 +128,22 @@
 .flagship { display: grid; gap: 56px; }
 @media (min-width: 1024px) {
   .flagship {
-    grid-template-columns: 60fr 40fr;
-    gap: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 0;
   }
   .flagship__pane { padding-inline-end: 64px; }
-  .flagship__pane + .flagship__pane {
+  /* The rule belongs between columns, so it goes on panes that start the
+     second column rather than on every pane after the first. With three
+     panes the third wraps into column one, where a leading rule would be
+     a divider against nothing. */
+  .flagship__pane:nth-child(even) {
     padding-inline: 64px 0;
     border-inline-start: 1px solid var(--bronze-edge);
+  }
+  .flagship__pane:nth-child(n + 3) {
+    padding-block-start: 56px;
+    margin-block-start: 56px;
+    border-block-start: 1px solid var(--bronze-edge);
   }
 }
 .pane__head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
@@ -373,3 +382,10 @@
 .property__link--soon { color: var(--stone-text); border-bottom: none; }
 .property__name { font-family: var(--body); font-weight: 500; color: var(--ivory); }
 .property__note { color: var(--parchment); }
+
+/* ── Founder note ─────────────────────────────────────────────────
+   One column, one voice. The argument runs top to bottom; splitting it
+   across panes severed the sentence that connected the work to the
+   company, because the reader's eye had already left the column. */
+.founder { max-width: 68ch; margin-top: 44px; }
+.founder p + p { margin-top: 18px; }

@@ -32,9 +32,30 @@ import Base from '../layouts/Base.astro';
   <section class="room" id="technology" aria-labelledby="technology-title">
     <div class="suite suite--flagship">
       <p class="kicker">Core technology</p>
-      <h2 class="suite-title reveal" id="technology-title">The work that gives the house its name.</h2>
+      <h2 class="suite-title reveal" id="technology-title">The work everything else rests on.</h2>
 
-      <div class="flagship" style="margin-top:56px">
+      <p class="lede reveal" style="margin-top:22px;max-width:66ch">Lane Vector is the research. TruVector is the product built on it. The
+        method came out of chemical reaction kinetics, was first applied to
+        search intent, and now governs how evidence is weighed before a system
+        acts on it.</p>
+
+      <div class="flagship" style="margin-top:48px">
+        <div class="flagship__pane reveal">
+          <div class="pane__head">
+            <h3 class="product__mark--typeset" style="margin:0">Lane Vector</h3>
+            <span class="badge">Research program</span>
+          </div>
+          <p class="lede pane__lede">Kinematic modeling of intent and information dynamics.</p>
+          <p style="margin-top:28px">Signals are treated as vector quantities with direction and rate of
+            change, not as scalar counts. The approach is carried over from
+            reaction kinetics, where a rate law is only valid for steps that are
+            genuinely independent &mdash; the same constraint that stops one claim
+            repeated five times from counting as five confirmations.</p>
+          <div class="actions" style="margin-top:28px">
+            <a class="btn btn--secondary" href="https://www.lanevector.com" rel="noopener">Open Lane Vector</a>
+          </div>
+        </div>
+
         <div class="flagship__pane reveal">
           <div class="pane__head">
             <h3 class="product__mark--typeset" style="margin:0">TruVector</h3>
@@ -204,7 +225,7 @@ import Base from '../layouts/Base.astro';
             <h3 class="visually-hidden">wAether</h3>
             <span class="badge badge--live">Live research product</span>
           </div>
-          <p class="lede pane__lede">A live observatory of solar, galactic, and terrestrial telemetry, built on official government data sources &mdash; named because the live site names them.</p>
+          <p class="lede pane__lede">Solar, galactic, and terrestrial telemetry from official government sources, each named on the page where it appears.</p>
           <div class="actions" style="margin-top:28px">
             <a class="btn btn--secondary" href="https://www.waether.space" rel="noopener">Open wAether</a>
           </div>
@@ -223,29 +244,28 @@ import Base from '../layouts/Base.astro';
   <section class="room room--alt" id="company" aria-labelledby="company-title">
     <div class="suite suite--flagship">
       <p class="kicker">Company</p>
-      <h2 class="suite-title reveal" id="company-title">Qualification, applied to machines.</h2>
+      <h2 class="suite-title reveal" id="company-title">Built by Michael Brandon Lane.</h2>
 
-      <div class="flagship reveal" style="margin-top:44px">
-        <div class="flagship__pane">
-          <p class="lede">InTellMe is built and run by Michael Brandon Lane, from Johnson City, Tennessee.</p>
-          <p>He trained as a chemical engineer at Virginia Tech and took a master&rsquo;s in chemistry at UNC Greensboro, then worked in industrial materials &mdash; including the lithium-battery separator programme where he is a named inventor on Celgard&rsquo;s patent family for coated separators, <a href="https://patents.google.com/patent/WO2019143483A1/en" rel="noopener">WO&nbsp;2019/143483</a>.</p>
-        </div>
-        <div class="flagship__pane">
-          <p>That work is why this company exists. A separator is a safety part: when a claim about one is wrong, the failure is a fire, not a bug report. Nothing ships on a plausible result. It ships once you can say how it was measured, across what range, within what error, and what observation would have shown you were wrong.</p>
-          <p><strong>Most AI systems have no equivalent step.</strong> They produce an assertion and act on it. TruVector is that missing step &mdash; the discipline of qualification, applied to a machine&rsquo;s claims before anything downstream obeys them.</p>
-        </div>
+      <div class="founder reveal">
+        <p class="lede">InTellMe is an independent research and software company founded and operated by Michael Brandon Lane, a chemical engineer and chemist based in Johnson City, Tennessee.</p>
+
+        <p>Before InTellMe, Lane worked at Celgard on lithium-ion battery separator and coating technology, including the development and scale-up of coated separator systems for high-volume manufacturing. He is a named inventor on multiple Celgard patents covering coated battery separators, including <a href="https://patents.google.com/patent/US11949124B2/en" rel="noopener">U.S. Patent 11,949,124</a>.</p>
+
+        <p>That work shaped the standard he brings to software: evidence should be traceable, uncertainty should be explicit, and conclusions should change when the evidence does. Lane later moved from industrial engineering into independent software and computational research, applying the same measurement-first discipline to systems that evaluate information rather than materials.</p>
+
+        <p>Today he designs and operates InTellMe and its products, including TruVector, which evaluates evidence, source independence, and disagreement before consequential decisions are passed downstream. InTellMe is self-funded and founder-run.</p>
       </div>
 
       <hr class="rule" style="margin-top:56px" />
       <p class="kicker" style="margin-top:56px">Current activity</p>
-      <h3 class="room-title reveal">Validation is labeled as validation.</h3>
-      <p class="lede reveal" style="margin-top:18px;max-width:60ch">Pilots are labeled as pilots. A public page is not a completed experiment. Work in progress is listed as work in progress.</p>
+      <h3 class="room-title reveal">Where each thing actually stands.</h3>
 
       <ul class="rail reveal">
         <li><span class="rail__name">TruVector</span> &mdash; <span class="rail__note">validation and pilot development.</span></li>
-        <li><span class="rail__name">NSF SBIR Project Pitch</span> &mdash; <span class="rail__note">in preparation. Pursued, not awarded.</span></li>
+        <li><span class="rail__name">NSF SBIR Project Pitch</span> &mdash; <span class="rail__note">submitted December 2025, declined. A re-filing is planned.</span></li>
         <li><span class="rail__name">ResearchOne</span> &mdash; <span class="rail__note">private beta.</span></li>
         <li><span class="rail__name">SAVR</span> &mdash; <span class="rail__note">web beta and Android testing.</span></li>
+        <li><span class="rail__name">Golden Goose Tools</span> &mdash; <span class="rail__note">live and taking payment.</span></li>
         <li><span class="rail__name">Golden Goose Tees Studio</span> &mdash; <span class="rail__note">storefront in beta; unmarketed, first order still ahead.</span></li>
         <li><span class="rail__name">wAether</span> &mdash; <span class="rail__note">live.</span></li>
       </ul>
@@ -258,13 +278,18 @@ import Base from '../layouts/Base.astro';
     <div class="suite suite--flagship">
       <p class="kicker">Where the work lives</p>
       <h2 class="suite-title reveal" id="properties-title">Every property, and its address.</h2>
-      <p class="lede reveal" style="margin-top:18px;max-width:64ch">Nothing here is a mockup. Each of these is a running site you can open now, at the stage it is actually in.</p>
+      <p class="lede reveal" style="margin-top:18px;max-width:64ch">Each address below resolves to a running site, at the stage named beside it.</p>
 
       <ul class="properties reveal">
         <li class="property">
+          <a class="property__link" href="https://www.lanevector.com" rel="noopener">lanevector.com</a>
+          <span class="property__name">Lane Vector</span>
+          <span class="property__note">The research program. Kinematic modeling of intent and information dynamics, carried over from chemical reaction kinetics.</span>
+        </li>
+        <li class="property">
           <a class="property__link" href="https://truvector.science" rel="noopener">truvector.science</a>
           <span class="property__name">TruVector</span>
-          <span class="property__note">Pre-execution arbitration of AI assertions. Validation and pilot development.</span>
+          <span class="property__note">The product built on that research: evidence, source independence and disagreement weighed before a consequential action. Validation and pilot development.</span>
         </li>
         <li class="property">
           <a class="property__link" href="https://www.waether.space" rel="noopener">waether.space</a>
@@ -279,7 +304,7 @@ import Base from '../layouts/Base.astro';
         <li class="property">
           <a class="property__link" href="https://www.goldengoosetools.com" rel="noopener">goldengoosetools.com</a>
           <span class="property__name">Golden Goose Tools</span>
-          <span class="property__note">Instant technical SEO audit of a live page. Live.</span>
+          <span class="property__note">A brand of small tools, and where the research was first applied commercially. The technical SEO audit is live; the rest are unfinished.</span>
         </li>
         <li class="property">
           <a class="property__link" href="https://www.goldengoosetees.com" rel="noopener">goldengoosetees.com</a>
@@ -302,8 +327,8 @@ import Base from '../layouts/Base.astro';
 
       <div class="tracks">
         <div class="track reveal">
-          <h3 class="room-title">Track A &mdash; TruVector research funding</h3>
-          <p style="margin-top:18px">An NSF SBIR Project Pitch is in preparation. It is being pursued, not awarded. The commercial applications are not the SBIR work.</p>
+          <h3 class="room-title">Track A &mdash; Lane Vector research funding</h3>
+          <p style="margin-top:18px">An NSF SBIR Project Pitch was submitted in December 2025 and declined. A re-filing is planned. Nothing has been awarded, and the commercial applications are not the SBIR work.</p>
           <div class="actions" style="margin-top:24px">
             <a class="btn btn--secondary" href="/investors#request">Request TruVector Technical Brief</a>
           </div>
@@ -330,7 +355,7 @@ import Base from '../layouts/Base.astro';
   <section class="room room--alt" id="contact" aria-labelledby="contact-title">
     <div class="suite suite--flagship">
       <p class="kicker">Contact</p>
-      <h2 class="suite-title reveal" id="contact-title">Reach the people doing the work.</h2>
+      <h2 class="suite-title reveal" id="contact-title">Reach the person doing the work.</h2>
 
       <div class="contact reveal">
         <div class="contact__primary">
@@ -369,10 +394,9 @@ import Base from '../layouts/Base.astro';
             </ul>
           </div>
           <div class="contact__col">
-            <h3>Public work</h3>
+            <h3>Accessibility</h3>
             <ul>
-              <li><a href="https://github.com/GooseyPrime" rel="noopener">github.com/GooseyPrime</a></li>
-              <li><a href="/accessibility">Accessibility</a></li>
+              <li><a href="/accessibility">Accessibility statement</a></li>
             </ul>
           </div>
         </div>
