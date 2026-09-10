@@ -282,6 +282,41 @@
 
 /* --- maturity table: what is built, what is not ---------------- */
 .maturity { margin-top: 56px; }
+.technology-strip {
+  display: grid;
+  gap: 0;
+  margin-top: 56px;
+  border-top: 1px solid var(--bronze-edge);
+}
+@media (min-width: 1024px) {
+  .technology-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.illustration-card {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--bronze-edge);
+}
+@media (min-width: 1024px) {
+  .illustration-card { padding: 30px 36px 30px 0; }
+  .illustration-card + .illustration-card {
+    padding-inline: 36px 0;
+    border-inline-start: 1px solid var(--bronze-edge);
+  }
+}
+.illustration-card__label {
+  margin: 0;
+  font-family: var(--label);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-text);
+}
+.illustration-card__body {
+  margin: 14px 0 0;
+  color: var(--parchment);
+  font-size: 15px;
+  line-height: 1.6;
+}
 .maturity__grid { display: grid; gap: 0; margin-top: 32px; border-top: 1px solid var(--bronze-edge); }
 .maturity__row {
   display: grid; gap: 6px 32px;
