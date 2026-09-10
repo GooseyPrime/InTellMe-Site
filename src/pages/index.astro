@@ -110,46 +110,46 @@ import Base from '../layouts/Base.astro';
       <!-- What is built, and what is not -->
       <div class="maturity reveal">
         <h3 class="room-title">What is built, and what is still being tested.</h3>
-        <p style="margin-top:16px;max-width:62ch">Each capability has a clear state. We do not call something done just because it sounds good, and we name unproven claims in plain sight.</p>
+        <p style="margin-top:16px;max-width:62ch">Each piece has a clear state. We do not call something done just because it sounds good, and we name the unproven parts in plain sight.</p>
 
         <div class="maturity__grid">
           <div class="maturity__row">
-            <span class="maturity__name">Evidence object and decision path</span>
-            <span class="maturity__note">The structured result a downstream system reads, and the Allow &middot; Review &middot; Block boundary it obeys. Schema and boundary are fixed and running.</span>
-            <span class="maturity__state"><span class="state state--implemented">Implemented</span></span>
+            <span class="maturity__name">The Allow / Review / Block result</span>
+            <span class="maturity__note">What an AI system gets back before it acts on its own. Allow, Review, or Block, with the reasons attached. This part runs today.</span>
+            <span class="maturity__state"><span class="state state--implemented">Built</span></span>
           </div>
           <div class="maturity__row">
-            <span class="maturity__name">Contradiction and divergence</span>
-            <span class="maturity__note">Detecting that sources disagree, and carrying that disagreement into the decision instead of averaging it away. Detectable and measured; calibration is not settled.</span>
-            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
+            <span class="maturity__name">When sources disagree</span>
+            <span class="maturity__note">Noticing that sources do not match, and keeping that disagreement visible instead of averaging it away. We can detect it. The scoring is still being tested.</span>
+            <span class="maturity__state"><span class="state state--validating">Being tested</span></span>
           </div>
           <div class="maturity__row">
-            <span class="maturity__name">Independence-aware evidence</span>
-            <span class="maturity__note">Discounting agreement between sources that share an origin, so that one claim repeated five times does not score as five confirmations.</span>
-            <span class="maturity__state"><span class="state state--validating">Under validation</span></span>
+            <span class="maturity__name">Copies are not new sources</span>
+            <span class="maturity__note">One story repeated five times is still one source, not five confirmations. This layer runs. How well it scores copies is still being tested.</span>
+            <span class="maturity__state"><span class="state state--validating">Being tested</span></span>
           </div>
           <div class="maturity__row">
-            <span class="maturity__name">Quorum</span>
-            <span class="maturity__note">The rule that decides how much independent agreement a claim needs before it may pass, given what acting on it would cost. Specified, not built.</span>
+            <span class="maturity__name">How much support is enough</span>
+            <span class="maturity__note">The rule for how much independent support an AI action needs, given what the action would cost. Written down. Not built yet.</span>
             <span class="maturity__state"><span class="state state--planned">Planned</span></span>
           </div>
           <div class="maturity__row">
-            <span class="maturity__name">AHE / HRA</span>
-            <span class="maturity__note">Adjudication under conflicting evidence where no source is authoritative. Stated as a claim with a stated way to be wrong, and not yet demonstrated.</span>
-            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
+            <span class="maturity__name">Weighing two sides with no referee</span>
+            <span class="maturity__note">What to do when sources conflict and none of them is the official answer. An idea with a way to be proven wrong. Not shown yet.</span>
+            <span class="maturity__state"><span class="state state--hypothesis">Idea, not shown</span></span>
           </div>
           <div class="maturity__row">
-            <span class="maturity__name">Kinematic validation</span>
-            <span class="maturity__note">Treating a claim's movement through evidence over time as a signal in its own right. The most speculative element here, and the reason the research is research.</span>
-            <span class="maturity__state"><span class="state state--hypothesis">Hypothesis</span></span>
+            <span class="maturity__name">Whether a story changing over time is a useful signal</span>
+            <span class="maturity__note">The most speculative piece. It is why the research is still research.</span>
+            <span class="maturity__state"><span class="state state--hypothesis">Idea, not shown</span></span>
           </div>
         </div>
 
         <div class="maturity__key">
-          <div><b>Implemented</b> &mdash; runs and is measured</div>
-          <div><b>Under validation</b> &mdash; protocol written, results still partial</div>
+          <div><b>Built</b> &mdash; runs and is measured</div>
+          <div><b>Being tested</b> &mdash; protocol written, results still partial</div>
           <div><b>Planned</b> &mdash; specified, not built yet</div>
-          <div><b>Hypothesis</b> &mdash; still a claim with a clear way to be wrong</div>
+          <div><b>Idea, not shown</b> &mdash; still an idea with a clear way to be wrong</div>
         </div>
       </div>
 
@@ -250,7 +250,7 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── COMPANY: current activity, research and validation ──── -->
+  <!-- ── COMPANY ────────────────────────────────────── -->
   <section class="room room--alt" id="company" aria-labelledby="company-title">
     <div class="suite suite--flagship">
       <p class="kicker">Company</p>
@@ -282,8 +282,6 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── FUNDING ────────────────────────────────────── -->
-  <!-- ── PROPERTIES: every live address, in one place ────────── -->
   <section class="room" id="properties" aria-labelledby="properties-title">
     <div class="suite suite--flagship">
       <p class="kicker">Where the work lives</p>
@@ -361,7 +359,6 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── CONTACT ────────────────────────────────────── -->
   <section class="room room--alt" id="contact" aria-labelledby="contact-title">
     <div class="suite suite--flagship">
       <p class="kicker">Contact</p>
