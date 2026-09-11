@@ -91,14 +91,17 @@ import Base from '../layouts/Base.astro';
 
       <div class="technology-strip reveal" aria-label="Examples">
         <article class="illustration-card">
+          <img class="illustration-card__img" src="/assets/imagery/examples/refund.svg" width="600" height="400" alt="An AI support chat about to issue a refund is checked against an old policy page and a current one that disagree, and the request goes to a person." loading="lazy" decoding="async" />
           <p class="illustration-card__label">Example</p>
           <p class="illustration-card__body">An AI support agent is about to issue a refund based on a policy it found online. That page is three years old and the current policy says otherwise. TruVector sends it to a person instead.</p>
         </article>
         <article class="illustration-card">
+          <img class="illustration-card__img" src="/assets/imagery/examples/reviews.svg" width="600" height="400" alt="A product page with a wall of five-star reviews; most of the reviews trace back to one cluster of sites, and only one comes from a separate customer." loading="lazy" decoding="async" />
           <p class="illustration-card__label">Example</p>
           <p class="illustration-card__body">An AI shopping assistant finds 40 glowing reviews. Thirty-eight trace back to the same network of sites. TruVector flags it before the assistant recommends the product.</p>
         </article>
         <article class="illustration-card">
+          <img class="illustration-card__img" src="/assets/imagery/examples/wire.svg" width="600" height="400" alt="One original news story at the center with many copies branching off it, counted as a single source." loading="lazy" decoding="async" />
           <p class="illustration-card__label">Example</p>
           <p class="illustration-card__body">A news summary says &ldquo;reported by multiple outlets.&rdquo; They&rsquo;re all reprints of one wire story. TruVector counts it as one source.</p>
         </article>
@@ -318,3 +321,15 @@ import Base from '../layouts/Base.astro';
   </section>
 
 </Base>
+
+<style>
+  .illustration-card__img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 18px;
+    border: 1px solid var(--bronze-edge);
+    border-radius: 2px;
+  }
+</style>
