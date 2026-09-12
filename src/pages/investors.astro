@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 ---
 <Base
   title="Investor Overview — InTellMe"
-  description="InTellMe builds evidence-governed research, verification, and decision infrastructure. Thesis, product status, milestones, and how research funding is kept separate from company investment."
+  description="InTellMe builds a checkpoint that AI systems run before they act, plus products built on the same work. Thesis, products, and how to request investor materials."
   path="/investors"
 >
 
@@ -11,9 +11,9 @@ import Base from '../layouts/Base.astro';
   <section class="room" style="padding-top:96px;padding-bottom:64px" aria-labelledby="inv-title">
     <div class="suite suite--flagship">
       <p class="kicker">Investor overview</p>
-      <h1 class="suite-title" id="inv-title" style="max-width:22ch">Evidence-governed infrastructure, and the products it makes possible.</h1>
+      <h1 class="suite-title" id="inv-title" style="max-width:22ch">A checkpoint for AI that acts on its own, and the products built around it.</h1>
       <hr class="rule--champagne" style="margin-top:32px" />
-      <p class="hero-support" style="margin-top:28px">InTellMe develops evidence-governed AI infrastructure and turns that core capability into commercial products. TruVector and ResearchOne establish technical value. SAVR and one revenue product prove the company can ship and charge.</p>
+      <p class="hero-support" style="margin-top:28px">Before an AI system acts, it should know where its information came from, whether it really comes from separate sources, and whether those sources agree. TruVector is that check. ResearchOne, SAVR, wAether and the rest of InTellMe&rsquo;s products are built on the same work.</p>
       <div class="actions" style="margin-top:36px">
         <a class="btn btn--primary" href="#request">Request Investor Materials</a>
         <a class="btn btn--secondary" href="#thesis">Read the thesis</a>
@@ -27,73 +27,66 @@ import Base from '../layouts/Base.astro';
   <section class="room" id="thesis" aria-labelledby="thesis-title">
     <div class="suite suite--flagship">
       <p class="kicker">Thesis</p>
-      <h2 class="suite-title reveal" id="thesis-title">Consequential AI actions are taken on untraceable assertions.</h2>
+      <h2 class="suite-title reveal" id="thesis-title">AI now acts on information nobody checked.</h2>
       <div class="flagship reveal" style="margin-top:48px">
         <div class="flagship__pane">
-          <p class="lede">As AI systems move from producing text to executing work, the operational question stops being whether a model said something wrong and becomes whether a system acted on something unreliable.</p>
-          <p>Most of the surrounding tooling improves generation. Very little of it sits between the assertion and the action, and almost none of it leaves a record a reviewer can follow afterwards.</p>
+          <p class="lede">AI used to just write things. Now it does things: answers customers, approves requests, places orders, files records, publishes posts. The risk isn&rsquo;t only that an AI says something wrong. It&rsquo;s that it acts on something wrong, and afterward nobody can tell what it was relying on.</p>
+          <p>Most AI tooling works on producing better answers. Almost nothing sits between the information and the action and leaves a record someone can review afterward.</p>
         </div>
         <div class="flagship__pane">
-          <p>InTellMe builds the layer that evaluates an assertion before a downstream system acts on it, and keeps the evidence, the disagreement, and the reasoning attached to the result.</p>
-          <p>That capability is the company. The commercial products are how it reaches a market and how the company funds itself while the core work is validated.</p>
+          <p>InTellMe builds that checkpoint. Before an AI acts, it checks the information behind the action and answers Allow, Review, or Block, with the reasons attached.</p>
+          <p>That capability is the company. The other products bring the same discipline to everyday tools and reach customers along the way.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── PRODUCT SUMMARIES, SAME BADGES ─────────────────────── -->
+  <!-- ── ACTIVE PROJECTS ───────────────────────────────────── -->
   <section class="room room--alt" id="ships" aria-labelledby="ships-title">
     <div class="suite suite--flagship">
-      <p class="kicker">What the company ships</p>
+      <p class="kicker">Active projects</p>
       <h2 class="suite-title reveal" id="ships-title">Core technology, then commercial ventures.</h2>
 
       <ul class="rail reveal" style="margin-top:48px">
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">Lane Vector</span>
-            <span class="badge">Research program</span>
           </div>
-          <span class="rail__note">The research the rest rests on. Kinematic modeling of intent and information dynamics, carried over from chemical reaction kinetics and first applied to search intent. Subject of the NSF work.</span>
+          <span class="rail__note">The science underneath: math that models how information and intent move (their direction, their speed, and the forces acting on them), adapted from chemical reaction kinetics.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">TruVector</span>
-            <span class="badge">Validation and pilot development</span>
           </div>
-          <span class="rail__note">Pre-execution arbitration of AI assertions before downstream systems act. States: Allow &middot; Review &middot; Block. One capability implemented, two under validation, one planned, two stated as hypotheses. The full breakdown is on the <a href="/#technology">Technology</a> section.</span>
+          <span class="rail__note">A checkpoint an AI system runs before it acts. It answers Allow, Review, or Block, with the reasons attached. More at <a href="https://truvector.science" rel="noopener">truvector.science</a>.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">ResearchOne</span>
-            <span class="badge">Private beta &mdash; early access available</span>
           </div>
-          <span class="rail__note">Structured deep research that keeps sources, contradictions, reasoning lineage, and report contracts intact.</span>
+          <span class="rail__note">A research workspace that keeps every source attached, keeps disagreements visible, and shows how each conclusion was reached.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">SAVR</span>
-            <span class="badge">Launching &mdash; web beta and Android testing</span>
           </div>
           <span class="rail__note">AI-assisted kitchen inventory and recipe planning that turns what you already have into meals.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">Golden Goose Tools</span>
-            <span class="badge badge--live">Live</span>
           </div>
-          <span class="rail__note">A brand of small tools, and where the research was first applied commercially. The technical SEO audit is live: free audit, with the complete list and fixes at $29 once. The other tools are unfinished.</span>
+          <span class="rail__note">Small tools for website owners, including a technical SEO audit: free to run, with the full list of fixes for $29.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">Golden Goose Tees Studio</span>
-            <span class="badge">Storefront in beta</span>
           </div>
-          <span class="rail__note">AI-assisted apparel design, with Printful-integrated placement, mockup, checkout, and fulfillment, at goldengoosetees.com. Open on live payments; unmarketed, and it has not yet taken a first order.</span>
+          <span class="rail__note">Design your own shirt with AI, see it on a mockup, and order it printed and shipped, at goldengoosetees.com.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">wAether</span>
-            <span class="badge badge--live">Live research product</span>
           </div>
           <span class="rail__note">A public observatory of solar, galactic, and terrestrial telemetry on official government data sources. Pricing starts at $4.99/month or $49.99/year.</span>
         </li>
@@ -101,72 +94,39 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── MILESTONES ─────────────────────────────────────────── -->
-  <section class="room" id="milestones" aria-labelledby="milestones-title">
-    <div class="suite suite--flagship">
-      <p class="kicker">Milestones</p>
-      <h2 class="suite-title reveal" id="milestones-title">Where the work stands.</h2>
-      <p class="caption reveal" style="margin-top:20px">Sequence, not calendar. Dates are published when they are committed.</p>
-      <ul class="rail reveal">
-        <li><span class="rail__name">TruVector</span> &mdash; <span class="rail__note">validation and pilot development.</span></li>
-        <li><span class="rail__name">NSF SBIR Project Pitch</span> &mdash; <span class="rail__note">submitted December 2025, declined. A re-filing is planned.</span></li>
-        <li><span class="rail__name">ResearchOne</span> &mdash; <span class="rail__note">private beta, early access available.</span></li>
-        <li><span class="rail__name">SAVR</span> &mdash; <span class="rail__note">web beta and Android testing.</span></li>
-        <li><span class="rail__name">Golden Goose Tees Studio</span> &mdash; <span class="rail__note">storefront in beta; unmarketed, first order still ahead.</span></li>
-        <li><span class="rail__name">wAether</span> &mdash; <span class="rail__note">live.</span></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- ── COMMERCIALIZATION + FUNDING ────────────────────────── -->
-  <section class="room room--alt" id="funding" aria-labelledby="fund-title">
+  <section class="room" id="funding" aria-labelledby="fund-title">
     <div class="suite suite--flagship">
-      <p class="kicker">Commercialization model</p>
-      <h2 class="suite-title reveal" id="fund-title">Research funding stays unmixed with company investment.</h2>
-
-      <div class="tracks">
-        <div class="track reveal">
-          <h3 class="room-title">Track A &mdash; Lane Vector research funding</h3>
-          <p style="margin-top:18px">An NSF SBIR Project Pitch was submitted in December 2025 and declined; the stated reason was that the new science was not evident on the face of the pitch. A re-filing is planned. Nothing has been awarded, and the commercial applications are not the SBIR work.</p>
-          <div class="actions" style="margin-top:24px">
-            <a class="btn btn--secondary" href="#request">Request TruVector Technical Brief</a>
-          </div>
-        </div>
-        <div class="track reveal">
-          <h3 class="room-title">Track B &mdash; Company investment</h3>
-          <p style="margin-top:18px">Pre-seed and strategic capital. Use of funds, by category:</p>
-          <ul>
-            <li>TruVector validation and pilot operations</li>
-            <li>ResearchOne private-beta hardening</li>
-            <li>SAVR launch: evidence, evaluation, and documentation</li>
-            <li>Company operations</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="reveal" style="margin-top:56px;padding-top:32px;border-top:1px solid var(--bronze-edge)">
-        <h3 class="room-title">Funding status</h3>
-        <p style="margin-top:16px">Development to date has been self-funded by the founder. <strong>InTellMe is pre-revenue across every application.</strong> Two products can take payment today; neither has produced revenue, and nothing here is presented as traction. What exists is shipped software and a technical thesis, not a customer base.</p>
-        <p>InTellMe is the trade name under which Michael Brandon Lane, a sole proprietor in Johnson City, Tennessee, develops and operates these products. There is no outside capital, no debt, and no cap table. A Tennessee entity would be formed in connection with a first close.</p>
+      <p class="kicker">Investment</p>
+      <h2 class="suite-title reveal" id="fund-title">Self-funded so far. Raising a pre-seed round.</h2>
+      <p class="reveal" style="margin-top:22px;max-width:62ch">InTellMe has been built without outside money. The round will pay for:</p>
+      <ul class="reveal">
+        <li>TruVector research and development</li>
+        <li>Growing ResearchOne and SAVR</li>
+        <li>Company operations</li>
+      </ul>
+      <p class="reveal" style="margin-top:22px;max-width:62ch">Terms, structure and financials are in the investor materials.</p>
+      <div class="actions reveal" style="margin-top:24px">
+        <a class="btn btn--primary" href="#request">Request investor materials</a>
+        <a class="btn btn--secondary" href="#request">Request the TruVector Technical Brief</a>
       </div>
     </div>
   </section>
 
   <!-- ── FOUNDER ────────────────────────────────────────────── -->
-  <section class="room" id="founder" aria-labelledby="founder-title">
+  <section class="room room--alt" id="founder" aria-labelledby="founder-title">
     <div class="suite suite--flagship">
       <p class="kicker">Founder</p>
-      <h2 class="suite-title reveal" id="founder-title">One operator.</h2>
+      <h2 class="suite-title reveal" id="founder-title">Built by Michael Brandon Lane.</h2>
       <div class="flagship reveal" style="margin-top:40px">
         <div class="flagship__pane">
           <p class="lede">InTellMe is an independent research and software company founded and operated by Michael Brandon Lane, a chemical engineer and chemist based in Johnson City, Tennessee.</p>
           <p>Before InTellMe, Lane worked at Celgard on lithium-ion battery separator and coating technology, including the development and scale-up of coated separator systems for high-volume manufacturing. He is a named inventor on multiple Celgard patents covering coated battery separators, including <a href="https://patents.google.com/patent/US11949124B2/en" rel="noopener">U.S. Patent 11,949,124</a>.</p>
-          <p>That work shaped the standard he brings to software: <strong>evidence should be traceable, uncertainty should be explicit, and conclusions should change when the evidence does.</strong> The same measurement-first discipline now applies to systems that evaluate information rather than materials.</p>
-          <p>He is the only engineer on everything here. TruVector, ResearchOne, SAVR, Golden Goose Tools, Golden Goose Tees Studio, and wAether were designed, built, and shipped by one person, self-funded. Each one is running at an address on the parent site, at the stage named beside it.</p>
+          <p>That work shaped how he builds software: <strong>every number should trace back to a measurement, uncertainty should be stated out loud, and conclusions should change when the data does.</strong> The same discipline now applies to systems that check information instead of materials.</p>
+          <p>He designed and built TruVector, ResearchOne, SAVR, Golden Goose Tools, Golden Goose Tees Studio and wAether himself. Each one has its own site, listed on the main page.</p>
         </div>
         <div class="flagship__pane">
-          <p>What that buys: a very short line between a decision and a deployed change, and a founder who has already carried a product from development into high-volume manufacturing once before.</p>
-          <p>What it costs: bandwidth, and a commercial function that does not exist yet. Both are named in the use of funds rather than papered over.</p>
+          <p>That means a short line between a decision and a shipped change, from a founder who has already taken a product from the lab into high-volume manufacturing.</p>
           <ul class="facts">
             <li>Direct &mdash; <a href="mailto:info@intellmeai.com">info@intellmeai.com</a></li>
             <li><a href="tel:+17473221977">(747) 322-1977</a></li>
@@ -178,7 +138,7 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- ── REQUEST FORM ───────────────────────────────────────── -->
-  <section class="room room--alt" id="request" aria-labelledby="request-title">
+  <section class="room" id="request" aria-labelledby="request-title">
     <div class="suite">
       <p class="kicker">Request</p>
       <h2 class="suite-title reveal" id="request-title">Request investor materials.</h2>
