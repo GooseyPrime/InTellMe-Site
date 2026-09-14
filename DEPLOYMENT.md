@@ -54,7 +54,7 @@ Run these against a preview deployment:
 2. `/`, `/investors`, `/privacy`, `/terms`, `/refunds` render fully with JavaScript disabled.
 3. Largest Contentful Paint is under 2.5 s on a throttled 4G profile.
 4. `/.well-known/security.txt`, `/robots.txt`, and `/sitemap.xml` all resolve.
-5. The investor form delivers only after `intellmeai.com` is a validated Mailjet domain with SPF/DKIM/DMARC; until then, browser failures stay on a readable HTML page that names `info@intellmeai.com`.
+5. Confirm in the Mailjet dashboard that the sending domain is validated with SPF, DKIM and DMARC published — the form only delivers once it is. Until then, browser failures must stay on a readable HTML page that names `info@intellmeai.com`. (Which domains are currently configured is deliberately not recorded in this repository; it is public.)
 6. No retired product name appears in any page source, the sitemap, or any meta tag.
 7. `/accessibility` resolves and the consent bar appears, then disappears once answered.
 8. Google Signals and Google product data sharing are confirmed **off** in the GA4 console.
