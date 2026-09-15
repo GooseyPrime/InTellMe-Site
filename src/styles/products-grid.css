@@ -1,0 +1,21 @@
+/* Four same-tier products: two per row. */
+@media (min-width: 720px) {
+  .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .product { padding: 44px 40px 44px 0; border-bottom: 0; }
+  .product + .product {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+  .product:nth-child(even) {
+    padding-inline: 40px 0;
+    border-inline-start: 1px solid var(--bronze-edge);
+  }
+  .product:nth-child(n + 3) {
+    border-block-start: 1px solid var(--bronze-edge);
+  }
+}
+
+.product__lockup { height: 72px; }
+@media (min-width: 720px) {
+  .product__lockup { height: 88px; }
+}
