@@ -1,0 +1,125 @@
+name: Agent guard
+
+# Two rules that were stated repeatedly and broken anyway. They are enforced
+# here so they do not depend on an agent remembering them.
+#
+#   1. Never commit to a branch whose pull request is closed or merged.
+#   2. Never hand over a pull request with a failing check.
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+  check_suite:
+    types: [completed]
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: read
+
+jobs:
+  # RULE 1 -------------------------------------------------------------------
+  # A closed pull request does NOT reopen when you push to its branch. The
+  # commits land on the branch and go nowhere. This job makes that loud
+  # instead of silent.
+  branch-has-open-pr:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: This branch must have an open pull request, or none yet
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+
+          prs=$(gh pr list --repo "$REPO" --head "$BRANCH" --state all \
+                  --json number,state,isDraft,url)
+
+          open_prs=$(echo "$prs"    | jq '[.[] | select(.state == "OPEN")]')
+          shut_prs=$(echo "$prs"    | jq '[.[] | select(.state != "OPEN")]')
+          open_n=$(echo "$open_prs" | jq 'length')
+          shut_n=$(echo "$shut_prs" | jq 'length')
+
+          if [ "$open_n" -gt 0 ]; then
+            echo "OK - this branch has an open pull request:"
+            echo "$open_prs" | jq -r '.[] | "  #\(.number) \(.url)"'
+            exit 0
+          fi
+
+          if [ "$shut_n" -eq 0 ]; then
+            echo "OK - no pull request for this branch yet."
+            echo "You have to be able to push before you can open one."
+            echo "Open one before asking anybody to review this work."
+            exit 0
+          fi
+
+          echo "::error title=Pushed to a branch with no open pull request::The only pull requests for '$BRANCH' are closed or merged. Pushing here does not reopen them, so these commits are going nowhere."
+          echo
+          echo "Closed or merged pull requests for this branch:"
+          echo "$shut_prs" | jq -r '.[] | "  #\(.number) \(.state) \(.url)"'
+          echo
+          echo "Do one of these, then push again:"
+          echo "  * open a new pull request from this branch, or"
+          echo "  * move the commits to a fresh branch and open a pull request from that."
+          exit 1
+
+  # RULE 2 -------------------------------------------------------------------
+  # A pull request with a red check does not get to sit in "ready for review".
+  # When a check on the head commit of an open, non-draft PR fails, this puts
+  # the PR back to draft and says which check failed.
+  #
+  # GitHub only fires check_suite and workflow_run triggers from the DEFAULT
+  # BRANCH copy of a workflow file, so this half begins working once this file
+  # is on the default branch. The push guard above works immediately.
+  #
+  # Neither job can prevent a merge. Only branch protection can - see the
+  # settings table in AGENTS.md.
+  pr-must-be-green:
+    if: github.event_name == 'check_suite' && github.event.check_suite.conclusion != 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a failing pull request back to draft
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.event.check_suite.head_sha }}
+        run: |
+          set -euo pipefail
+
+          # Every check on this commit except this job itself, or it would
+          # trip over its own result.
+          failed=$(gh api "repos/$REPO/commits/$SHA/check-runs" --paginate \
+            --jq '.check_runs[]
+                  | select(.name != "Send a failing pull request back to draft")
+                  | select(.conclusion == "failure"
+                        or .conclusion == "timed_out"
+                        or .conclusion == "action_required")
+                  | .name' | sort -u || true)
+
+          if [ -z "$failed" ]; then
+            echo "No failing checks on $SHA. Nothing to do."
+            exit 0
+          fi
+
+          echo "Failing checks on $SHA:"
+          echo "$failed"
+
+          prs=$(gh api "repos/$REPO/commits/$SHA/pulls" \
+                  --jq '.[] | select(.state == "open" and .draft == false) | .number' || true)
+
+          if [ -z "$prs" ]; then
+            echo "No open, non-draft pull request at this commit. Nothing to do."
+            exit 0
+          fi
+
+          list=$(echo "$failed" | sed 's/^/- /')
+
+          for pr in $prs; do
+            echo "Converting #$pr back to draft."
+            gh pr ready --repo "$REPO" --undo "$pr" || true
+            gh pr comment --repo "$REPO" "$pr" --body "$(printf 'Put back to **draft** automatically: a check on the head commit is failing, and a pull request is not handed over for review with a red check.\n\nFailing:\n\n%s\n\nFix them, push, and mark it ready for review again once everything is green.' "$list")" || true
+          done
