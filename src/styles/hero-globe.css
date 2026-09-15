@@ -1,0 +1,25 @@
+.hero__still {
+  object-fit: cover;
+  object-position: 72% 48%;
+  transform: scale(1.08);
+  transform-origin: 78% 50%;
+}
+.hero__veil {
+  background:
+    linear-gradient(to right,
+      var(--obsidian) 0%,
+      color-mix(in srgb, var(--obsidian) 90%, transparent) 36%,
+      color-mix(in srgb, var(--obsidian) 52%, transparent) 58%,
+      transparent 84%),
+    linear-gradient(to top, var(--obsidian) 0%, transparent 40%);
+}
+@media (max-width: 1023px) {
+  .hero__still {
+    object-position: 60% 45%;
+    transform: scale(1.16);
+    transform-origin: 50% 40%;
+  }
+  .hero__veil::after {
+    background: color-mix(in srgb, var(--obsidian) 55%, transparent);
+  }
+}
