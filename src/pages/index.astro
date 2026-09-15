@@ -92,7 +92,7 @@ import Base from '../layouts/Base.astro';
 
   <section class="room room--alt" id="products" aria-labelledby="products-title">
     <div class="suite suite--flagship">
-      <p class="kicker">Commercial ventures</p>
+      <p class="kicker">Products</p>
       <h2 class="suite-title reveal" id="products-title">Products that came out of the same work.</h2>
 
       <div class="rooms">
@@ -106,6 +106,19 @@ import Base from '../layouts/Base.astro';
           <p class="product__body">AI-assisted kitchen inventory and recipe planning that turns what you already have into meals.</p>
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://savr.cam" rel="noopener">Visit SAVR <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+
+        <article class="product reveal">
+          <img class="product__lockup" src="/assets/logos/waether.png"
+               srcset="/assets/logos/waether.png 1x, /assets/logos/waether@2x.png 2x, /assets/logos/waether@3x.png 3x"
+               width="72" height="72" alt="" />
+          <div class="product__meta">
+            <h3 class="visually-hidden">wAether</h3>
+          </div>
+          <p class="product__body">Solar, galactic, and terrestrial telemetry from official government sources, each named on the page where it appears.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://www.waether.space" rel="noopener">Open wAether <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
         </article>
 
@@ -138,35 +151,7 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <section class="room" id="research" aria-labelledby="research-title">
-    <div class="suite suite--flagship">
-      <p class="kicker">Research</p>
-      <h2 class="suite-title reveal" id="research-title">A public observatory for space and Earth data.</h2>
-
-      <div class="research__grid reveal">
-        <div>
-          <div class="pane__head">
-            <img class="product__lockup product__lockup--sm" src="/assets/logos/waether.png"
-                 srcset="/assets/logos/waether.png 1x, /assets/logos/waether@2x.png 2x, /assets/logos/waether@3x.png 3x"
-                 width="72" height="72" alt="" />
-            <h3 class="visually-hidden">wAether</h3>
-          </div>
-          <p class="lede pane__lede">Solar, galactic, and terrestrial telemetry from official government sources, each named on the page where it appears.</p>
-          <div class="actions" style="margin-top:28px">
-            <a class="btn btn--secondary" href="https://www.waether.space" rel="noopener">Open wAether</a>
-          </div>
-        </div>
-        <div>
-          <ul class="sources" aria-label="Data sources">
-            <li>NOAA SWPC</li><li>USGS</li><li>NASA DONKI</li><li>NOAA OVATION</li>
-          </ul>
-          <p class="caption" style="margin-top:24px">Pricing starts at $4.99/month or $49.99/year.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="room room--alt" id="company" aria-labelledby="company-title">
+  <section class="room" id="company" aria-labelledby="company-title">
     <div class="suite suite--flagship">
       <p class="kicker">Company</p>
       <h2 class="suite-title reveal" id="company-title">Built and run by Michael Brandon Lane.</h2>
@@ -185,7 +170,7 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <section class="room" id="properties" aria-labelledby="properties-title">
+  <section class="room room--alt" id="properties" aria-labelledby="properties-title">
     <div class="suite suite--flagship">
       <p class="kicker">Active projects</p>
       <h2 class="suite-title reveal" id="properties-title">Everything we&rsquo;re working on.</h2>
