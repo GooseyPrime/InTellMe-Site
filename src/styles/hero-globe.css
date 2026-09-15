@@ -1,25 +1,27 @@
+/* Globe plate: sit it on the right, a hair larger than the old flow still.
+   Left veil stays heavy so the headline never rides a gold streak. */
 .hero__still {
   object-fit: cover;
-  object-position: 72% 48%;
-  transform: scale(1.08);
-  transform-origin: 78% 50%;
+  object-position: 68% 48%;
+  transform: scale(1.10);
+  transform-origin: 72% 50%;
 }
 .hero__veil {
   background:
     linear-gradient(to right,
       var(--obsidian) 0%,
-      color-mix(in srgb, var(--obsidian) 90%, transparent) 36%,
-      color-mix(in srgb, var(--obsidian) 52%, transparent) 58%,
-      transparent 84%),
-    linear-gradient(to top, var(--obsidian) 0%, transparent 40%);
+      color-mix(in srgb, var(--obsidian) 88%, transparent) 32%,
+      color-mix(in srgb, var(--obsidian) 48%, transparent) 54%,
+      transparent 80%),
+    linear-gradient(to top, var(--obsidian) 0%, transparent 38%);
 }
 @media (max-width: 1023px) {
   .hero__still {
-    object-position: 60% 45%;
-    transform: scale(1.16);
-    transform-origin: 50% 40%;
+    object-position: 58% 46%;
+    transform: scale(1.08);
+    transform-origin: 55% 42%;
   }
   .hero__veil::after {
-    background: color-mix(in srgb, var(--obsidian) 55%, transparent);
+    background: color-mix(in srgb, var(--obsidian) 58%, transparent);
   }
 }
