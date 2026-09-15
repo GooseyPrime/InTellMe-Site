@@ -7,7 +7,6 @@ import Base from '../layouts/Base.astro';
   path="/investors"
 >
 
-  <!-- ── HERO: half viewport, more paper, less atmosphere ────── -->
   <section class="room" style="padding-top:96px;padding-bottom:64px" aria-labelledby="inv-title">
     <div class="suite suite--flagship">
       <p class="kicker">Investor overview</p>
@@ -23,25 +22,23 @@ import Base from '../layouts/Base.astro';
 
   <hr class="rule" />
 
-  <!-- ── THESIS + PROBLEM ───────────────────────────────────── -->
   <section class="room" id="thesis" aria-labelledby="thesis-title">
     <div class="suite suite--flagship">
       <p class="kicker">Thesis</p>
       <h2 class="suite-title reveal" id="thesis-title">AI now acts on information nobody checked.</h2>
       <div class="flagship reveal" style="margin-top:48px">
         <div class="flagship__pane">
-          <p class="lede">AI used to just write things. Now it does things: answers customers, approves requests, places orders, files records, publishes posts. The risk isn&rsquo;t only that an AI says something wrong. It&rsquo;s that it acts on something wrong, and afterward nobody can tell what it was relying on.</p>
+          <p class="lede">Most systems still stop at generating text. The new risk is action: answers to customers, approvals, orders, filings, published posts. The risk isn&rsquo;t only that an AI says something wrong. It&rsquo;s that it acts on something wrong, and afterward nobody can tell what it was relying on.</p>
           <p>Most AI tooling works on producing better answers. Almost nothing sits between the information and the action and leaves a record someone can review afterward.</p>
         </div>
         <div class="flagship__pane">
           <p>InTellMe builds that checkpoint. Before an AI acts, it checks the information behind the action and answers Allow, Review, or Block, with the reasons attached.</p>
-          <p>That capability is the company. The other products bring the same discipline to everyday tools and reach customers along the way.</p>
+          <p>The other products apply the same discipline to everyday tools.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── ACTIVE PROJECTS ───────────────────────────────────── -->
   <section class="room room--alt" id="ships" aria-labelledby="ships-title">
     <div class="suite suite--flagship">
       <p class="kicker">Active projects</p>
@@ -52,7 +49,7 @@ import Base from '../layouts/Base.astro';
           <div class="product__meta" style="margin-bottom:8px">
             <span class="rail__name">Lane Vector</span>
           </div>
-          <span class="rail__note">The science underneath: math that models how information and intent move (their direction, their speed, and the forces acting on them), adapted from chemical reaction kinetics.</span>
+          <span class="rail__note">Research program: bookkeeping from chemical kinetics applied to how information moves, where the transfer is derived (direction, rate-estimate noise floor, source independence, stiffness as a numerical problem). Copies do not conserve; there is no K_eq for public belief. Papers at lanevector.com.</span>
         </li>
         <li>
           <div class="product__meta" style="margin-bottom:8px">
@@ -94,7 +91,6 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── COMMERCIALIZATION + FUNDING ────────────────────────── -->
   <section class="room" id="funding" aria-labelledby="fund-title">
     <div class="suite suite--flagship">
       <p class="kicker">Investment</p>
@@ -113,7 +109,6 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── FOUNDER ────────────────────────────────────────────── -->
   <section class="room room--alt" id="founder" aria-labelledby="founder-title">
     <div class="suite suite--flagship">
       <p class="kicker">Founder</p>
@@ -123,10 +118,9 @@ import Base from '../layouts/Base.astro';
           <p class="lede">InTellMe is an independent research and software company founded and operated by Michael Brandon Lane, a chemical engineer and chemist based in Johnson City, Tennessee.</p>
           <p>Before InTellMe, Lane worked at Celgard on lithium-ion battery separator and coating technology, including the development and scale-up of coated separator systems for high-volume manufacturing. He is a named inventor on multiple Celgard patents covering coated battery separators, including <a href="https://patents.google.com/patent/US11949124B2/en" rel="noopener">U.S. Patent 11,949,124</a>.</p>
           <p>That work shaped how he builds software: <strong>every number should trace back to a measurement, uncertainty should be stated out loud, and conclusions should change when the data does.</strong> The same discipline now applies to systems that check information instead of materials.</p>
-          <p>He designed and built TruVector, ResearchOne, SAVR, Golden Goose Tools, Golden Goose Tees Studio and wAether himself. Each one has its own site, listed on the main page.</p>
         </div>
         <div class="flagship__pane">
-          <p>That means a short line between a decision and a shipped change, from a founder who has already taken a product from the lab into high-volume manufacturing.</p>
+          <p>Product sites are listed on the main page. A short line from a decision to a shipped change is the operating point.</p>
           <ul class="facts">
             <li>Direct &mdash; <a href="mailto:info@intellmeai.com">info@intellmeai.com</a></li>
             <li><a href="tel:+17473221977">(747) 322-1977</a></li>
@@ -137,7 +131,6 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ── REQUEST FORM ───────────────────────────────────────── -->
   <section class="room" id="request" aria-labelledby="request-title">
     <div class="suite">
       <p class="kicker">Request</p>
@@ -218,8 +211,6 @@ import Base from '../layouts/Base.astro';
   }
   .form textarea { min-height: 120px; resize: vertical; }
   .form input:hover, .form select:hover, .form textarea:hover { border-color: var(--bronze-edge-hot); }
-  /* Invalid state is carried by weight and an inset edge as well as by hue,
-     so it is perceivable without distinguishing red from bronze. */
   .form input:user-invalid, .form textarea:user-invalid {
     border-color: var(--danger);
     box-shadow: inset 3px 0 0 var(--danger);
