@@ -1,4 +1,4 @@
-/* Four same-tier products: two per row. */
+/* Product grid: two per row on desktop. */
 @media (min-width: 720px) {
   .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .product { padding: 44px 40px 44px 0; border-bottom: 0; }

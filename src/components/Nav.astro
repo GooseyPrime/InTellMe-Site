@@ -3,11 +3,9 @@ interface Props { path: string; }
 const { path } = Astro.props;
 const home = path === '/';
 const links = [
-  { label: 'Technology', href: home ? '#technology' : '/#technology' },
-  { label: 'Products',   href: home ? '#products'   : '/#products' },
-  { label: 'Company',    href: home ? '#company'    : '/#company' },
-  { label: 'Investors',  href: '/investors' },
-  { label: 'Contact',    href: home ? '#contact'    : '/#contact' }
+  { label: 'Work',     href: home ? '#work'    : '/#work' },
+  { label: 'Company',  href: home ? '#company' : '/#company' },
+  { label: 'Contact',  href: home ? '#contact' : '/#contact' }
 ];
 ---
 <header class="nav" id="nav">
