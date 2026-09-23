@@ -2,12 +2,16 @@
 
 Archived 2026-09-23. Not part of the live parent site.
 
-The public `/investors` page is gone (301 to `/`). There is no form to post here.
-This folder keeps the old Vercel function and its unit test so the work is not
-lost. It is not served. Do not move these files back under `api/` unless the
-investor page is rebuilt.
+The public `/investors` page 301s to `/`. There is no form. The Vercel
+function and its unit test were removed from `api/` and `test/` so they are
+not deployed.
 
-Original paths:
+Retrieve the last live copies from git history:
 
 - `api/investor-request.js`
 - `test/investor-request.test.mjs`
+
+Last commit that still had the live function on this branch: parent of the
+"Remove live investor-request function" commit.
+
+Do not put these files back under `api/` unless the investor page is rebuilt.
