@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /investor-request-received
 
 Sitemap: https://www.intellmeai.com/sitemap.xml

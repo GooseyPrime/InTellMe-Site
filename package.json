@@ -3,13 +3,13 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "InTellMe parent company site — evidence-governed infrastructure.",
+  "description": "InTellMe parent company site.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node test/investor-request.test.mjs",
+    "test": "node -e \"console.log('investor request archived; no live tests')\"",
     "verify": "npm run check && npm run test && npm run build"
   },
   "devDependencies": {

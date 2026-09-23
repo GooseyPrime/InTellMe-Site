@@ -26,7 +26,7 @@ jobs:
       - name: Type check
         run: npm run check
 
-      - name: Test the investor request endpoint
+      - name: Tests
         run: npm test
 
       - name: Build
@@ -35,15 +35,14 @@ jobs:
       - name: Confirm every page rendered
         run: |
           set -euo pipefail
-          for page in index investors privacy terms refunds accessibility 404 investor-request-received; do
+          for page in index privacy terms refunds accessibility 404; do
             test -s "dist/$page.html" || { echo "missing or empty: dist/$page.html"; exit 1; }
           done
-          echo "8 pages present."
+          echo "6 pages present."
 
       - name: Confirm no secrets were committed
         run: |
           set -euo pipefail
-          # Patterns are split so this file does not match itself.
           PATTERN='(sk''_live_|sk''_test_|AI''za[0-9A-Za-z_-]{35}|BEGIN [A-Z ]*PRIVATE KE''Y)'
           if grep -rIlE "$PATTERN" \
                --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=.git \
