@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 ---
 <Base
   title="InTellMe"
-  description="InTellMe is a research company in Johnson City, Tennessee. We build a checkpoint that AI systems run before they act, plus a few everyday apps that grew out of that work."
+  description="InTellMe is a research and software company in Johnson City, Tennessee. The live products and company details are listed on this page."
   path="/"
 >
 
@@ -16,86 +16,55 @@ import Base from '../layouts/Base.astro';
     <div class="hero__veil" aria-hidden="true"></div>
 
     <div class="suite suite--flagship hero__inner">
-      <h1 class="hero-line" id="hero-line">Before an AI acts on something, it should know whether it&rsquo;s true.</h1>
+      <h1 class="hero-line" id="hero-line">A research and software company in Johnson City, Tennessee.</h1>
       <hr class="rule--champagne" />
-      <p class="hero-support">InTellMe is a research company in Johnson City, Tennessee. We build a checkpoint that AI systems run before they take action. It looks at where their information came from and whether it holds up. We also make a few everyday apps that grew out of that work.</p>
+      <p class="hero-support">Founder-run. TruVector is the checkpoint an AI system runs before it acts. The rest of this page is the live work &mdash; each product has its own site.</p>
       <div class="actions">
-        <a class="btn btn--primary" href="https://truvector.science" rel="noopener">Visit TruVector</a>
-        <a class="btn btn--secondary" href="/investors">For investors</a>
-        <a class="btn btn--tertiary" href="https://www.researchone.io/" rel="noopener">Try ResearchOne <span class="arrow" aria-hidden="true">&#8594;</span></a>
+        <a class="btn btn--primary" href="#work">See the work</a>
+        <a class="btn btn--secondary" href="#company">Company</a>
+        <a class="btn btn--tertiary" href="#contact">Contact <span class="arrow" aria-hidden="true">&#8594;</span></a>
       </div>
     </div>
   </section>
 
-  <section class="room" id="technology" aria-labelledby="technology-title">
+  <section class="room" id="work" aria-labelledby="work-title">
     <div class="suite suite--flagship">
-      <p class="kicker">What we build</p>
-      <h2 class="suite-title reveal" id="technology-title">One problem, three pieces.</h2>
+      <p class="kicker">Work</p>
+      <h2 class="suite-title reveal" id="work-title">Live products and the science behind them.</h2>
+      <p class="lede reveal" style="margin-top:22px;max-width:66ch">Each one has its own site. This page is the index.</p>
 
-      <p class="lede reveal" style="margin-top:22px;max-width:66ch">AI systems are starting to act on their own: sending messages, approving requests, moving money, publishing content. They act on whatever information they pulled in, and a lot of that is wrong, out of date, or one rumor copied across dozens of sites. Lane Vector is the science of how information moves. TruVector is the product that uses it to check an AI&rsquo;s information before it acts. ResearchOne is a research workspace built on the same rules.</p>
-
-      <div class="flagship" style="margin-top:48px">
-        <div class="flagship__pane reveal">
-          <div class="pane__head">
+      <div class="rooms" style="margin-top:48px">
+        <article class="product reveal">
+          <div class="product__meta">
             <h3 class="product__mark--typeset" style="margin:0">Lane Vector</h3>
           </div>
-          <p class="lede pane__lede">The science of how information moves.</p>
-          <p style="margin-top:28px">Most tools count how often something shows up. Lane Vector measures which way it&rsquo;s moving, how fast, and whether many voices are really one voice repeated. One story copied five times is still one source, not five confirmations.</p>
-          <div class="actions" style="margin-top:28px">
-            <a class="btn btn--secondary" href="https://www.lanevector.com" rel="noopener">Open Lane Vector</a>
+          <p class="product__body">The science of how information moves.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://www.lanevector.com" rel="noopener">Open Lane Vector <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
-        </div>
+        </article>
 
-        <div class="flagship__pane reveal">
-          <div class="pane__head">
+        <article class="product reveal">
+          <div class="product__meta">
             <h3 class="product__mark--typeset" style="margin:0">TruVector</h3>
           </div>
-          <p class="lede pane__lede">A checkpoint an AI system runs before it acts.</p>
-          <ul class="states" aria-label="Possible answers">
-            <li>Allow</li><li>Review</li><li>Block</li>
-          </ul>
-          <p style="margin-top:28px">Before the AI acts, TruVector checks three things: where the information came from, whether the sources are really separate or one source copied many times, and whether they agree. Then it answers Allow, Review (have a person look), or Block, with the reasons attached so someone can check them later.</p>
-          <p>It works like a credit check, except it checks the information an AI is about to rely on instead of checking a borrower.</p>
-          <p>It doesn&rsquo;t trust a source just because it&rsquo;s a big name. It looks at how the information actually got there.</p>
-          <div class="actions" style="margin-top:28px">
-            <a class="btn btn--secondary" href="https://truvector.science" rel="noopener">Open TruVector</a>
-            <a class="btn btn--tertiary" href="/investors#request">Request the Technical Brief <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          <p class="product__body">A checkpoint an AI system runs before it acts.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://truvector.science" rel="noopener">Open TruVector <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
-        </div>
+        </article>
 
-        <div class="flagship__pane reveal">
-          <div class="pane__head">
-            <svg class="product__mark" viewBox="0 0 240 240" role="img" aria-label="ResearchOne" style="height:34px;margin:0">
-              <g transform="translate(120 120)" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
-                <polygon points="0,-110 95.3,-55 95.3,55 0,110 -95.3,55 -95.3,-55" stroke-width="7"></polygon>
-                <path d="M -50,0 C -50,-40 50,-40 50,0 C 50,40 -50,40 -50,0" stroke-width="9"></path>
-                <path d="M -40,12 C -40,-28 60,-28 60,12 C 60,52 -40,52 -40,12" stroke-width="9" opacity=".62"></path>
-              </g>
-            </svg>
-            <h3 class="room-title" style="font-size:1.5rem">ResearchOne</h3>
+        <article class="product reveal">
+          <img class="product__lockup" src="/assets/logos/researchone.svg" width="72" height="72" alt="" />
+          <div class="product__meta">
+            <h3 class="visually-hidden">ResearchOne</h3>
           </div>
-          <p class="lede pane__lede">A research workspace that keeps every source attached to what you write.</p>
-          <ul class="facts">
-            <li>Every statement links back to where it came from.</li>
-            <li>When sources disagree, both sides stay in the report.</li>
-            <li>You can see how each conclusion was reached.</li>
-            <li>Reports follow a consistent, checkable format.</li>
-          </ul>
-          <div class="actions" style="margin-top:28px">
+          <p class="product__body">A multi-agent research system that maps a question across sources, tests its own conclusions, and keeps contradictions in the report.</p>
+          <div class="product__action">
             <a class="btn btn--tertiary" href="https://www.researchone.io/" rel="noopener">Open ResearchOne <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
-        </div>
-      </div>
+        </article>
 
-    </div>
-  </section>
-
-  <section class="room room--alt" id="products" aria-labelledby="products-title">
-    <div class="suite suite--flagship">
-      <p class="kicker">Products</p>
-      <h2 class="suite-title reveal" id="products-title">Products that came out of the same work.</h2>
-
-      <div class="rooms">
         <article class="product reveal">
           <img class="product__lockup" src="/assets/logos/savr.png"
                srcset="/assets/logos/savr.png 1x, /assets/logos/savr@2x.png 2x, /assets/logos/savr@3x.png 3x"
@@ -103,7 +72,7 @@ import Base from '../layouts/Base.astro';
           <div class="product__meta">
             <h3 class="visually-hidden">SAVR</h3>
           </div>
-          <p class="product__body">AI-assisted kitchen inventory and recipe planning that turns what you already have into meals.</p>
+          <p class="product__body">Kitchen inventory and recipe planning from what you already have.</p>
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://savr.cam" rel="noopener">Visit SAVR <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
@@ -116,7 +85,7 @@ import Base from '../layouts/Base.astro';
           <div class="product__meta">
             <h3 class="visually-hidden">wAether</h3>
           </div>
-          <p class="product__body">Solar, galactic, and terrestrial telemetry from official government sources, each named on the page where it appears.</p>
+          <p class="product__body">Observatory of solar, galactic, and terrestrial telemetry from named government sources.</p>
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://www.waether.space" rel="noopener">Open wAether <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
@@ -129,7 +98,7 @@ import Base from '../layouts/Base.astro';
           <div class="product__meta">
             <h3 class="visually-hidden">Golden Goose Tools</h3>
           </div>
-          <p class="product__body">A shop of small tools you buy and keep — BugNote for capturing bugs, a one-time technical SEO audit, and more as they ship.</p>
+          <p class="product__body">Small tools you buy and keep. An InTellMe studio. BugNote, a technical SEO audit, and an accessibility check are live.</p>
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://www.goldengoosetools.com/" rel="noopener">Open Golden Goose Tools <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
@@ -142,16 +111,36 @@ import Base from '../layouts/Base.astro';
           <div class="product__meta">
             <h3 class="visually-hidden">Golden Goose Tees Studio</h3>
           </div>
-          <p class="product__body">Design your own shirt with AI, see it on a mockup, and order it printed and shipped.</p>
+          <p class="product__body">Design a shirt, see it on a mockup, and order it printed and shipped.</p>
           <div class="product__action">
-            <a class="btn btn--tertiary" href="https://www.goldengoosetees.com/" rel="noopener">Open the storefront <span class="arrow" aria-hidden="true">&#8594;</span></a>
+            <a class="btn btn--tertiary" href="https://www.goldengoosetees.com/" rel="noopener">Open Golden Goose Tees <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+
+        <article class="product reveal">
+          <div class="product__meta">
+            <h3 class="product__mark--typeset" style="margin:0">NewJobBio</h3>
+          </div>
+          <p class="product__body">Retells work you actually did in the language of the job posting. Nothing invented.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://www.newjobbio.com" rel="noopener">Open NewJobBio <span class="arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </article>
+
+        <article class="product reveal">
+          <div class="product__meta">
+            <h3 class="product__mark--typeset" style="margin:0">yoohoo.guru</h3>
+          </div>
+          <p class="product__body">Local help from neighbors in Johnson City. Escrow and two-sided reviews.</p>
+          <div class="product__action">
+            <a class="btn btn--tertiary" href="https://www.yoohoo.guru" rel="noopener">Open yoohoo.guru <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="room" id="company" aria-labelledby="company-title">
+  <section class="room room--alt" id="company" aria-labelledby="company-title">
     <div class="suite suite--flagship">
       <p class="kicker">Company</p>
       <h2 class="suite-title reveal" id="company-title">Built and run by Michael Brandon Lane.</h2>
@@ -163,75 +152,14 @@ import Base from '../layouts/Base.astro';
 
         <p>That work shaped how he builds software: every number should trace back to a measurement, uncertainty should be stated out loud, and conclusions should change when the data does.</p>
 
-        <p>The idea behind Lane Vector came from that background. Chemical kinetics describes how a reaction moves: its rate, its direction, and the forces that speed it up or slow it down. Lane Vector applies the same kind of math to how information and intent move between people and machines. TruVector puts it to work checking the information behind an AI&rsquo;s action before the action happens.</p>
+        <p>Lane Vector applies the same kind of measurement to how information moves. TruVector puts one result of that work in front of an AI action. The other products on this page are separate sites, each written for its own job.</p>
 
         <p>InTellMe is self-funded and founder-run.</p>
       </div>
     </div>
   </section>
 
-  <section class="room room--alt" id="properties" aria-labelledby="properties-title">
-    <div class="suite suite--flagship">
-      <p class="kicker">Active projects</p>
-      <h2 class="suite-title reveal" id="properties-title">Everything we&rsquo;re working on.</h2>
-
-      <ul class="properties reveal">
-        <li class="property">
-          <a class="property__link" href="https://www.lanevector.com" rel="noopener">lanevector.com</a>
-          <span class="property__name">Lane Vector</span>
-          <span class="property__note">The science of how information moves.</span>
-        </li>
-        <li class="property">
-          <a class="property__link" href="https://truvector.science" rel="noopener">truvector.science</a>
-          <span class="property__name">TruVector</span>
-          <span class="property__note">A checkpoint an AI system runs before it acts.</span>
-        </li>
-        <li class="property">
-          <a class="property__link" href="https://www.waether.space" rel="noopener">waether.space</a>
-          <span class="property__name">wAether</span>
-          <span class="property__note">Observatory of solar, galactic and terrestrial telemetry.</span>
-        </li>
-        <li class="property">
-          <a class="property__link" href="https://savr.cam" rel="noopener">savr.cam</a>
-          <span class="property__name">SAVR</span>
-          <span class="property__note">Kitchen inventory and recipe planning.</span>
-        </li>
-        <li class="property">
-          <a class="property__link" href="https://www.goldengoosetools.com" rel="noopener">goldengoosetools.com</a>
-          <span class="property__name">Golden Goose Tools</span>
-          <span class="property__note">Small tools you buy and keep. BugNote and a technical SEO audit are live.</span>
-        </li>
-        <li class="property">
-          <a class="property__link" href="https://www.goldengoosetees.com" rel="noopener">goldengoosetees.com</a>
-          <span class="property__name">Golden Goose Tees Studio</span>
-          <span class="property__note">Design your own shirt with AI and order it printed and shipped.</span>
-        </li>
-        <li class="property">
-          <a class="property__link" href="https://www.researchone.io/" rel="noopener">researchone.io</a>
-          <span class="property__name">ResearchOne</span>
-          <span class="property__note">A research workspace that keeps every source attached.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="room" id="funding" aria-labelledby="funding-title">
-    <div class="suite suite--flagship">
-      <p class="kicker">Investors</p>
-      <h2 class="suite-title reveal" id="funding-title">Self-funded so far. Raising a pre-seed round.</h2>
-      <p class="reveal" style="margin-top:22px;max-width:62ch">InTellMe has been built without outside money. The round will pay for:</p>
-      <ul class="reveal">
-        <li>TruVector research and development</li>
-        <li>Growing ResearchOne and SAVR</li>
-        <li>Company operations</li>
-      </ul>
-      <div class="actions reveal" style="margin-top:24px">
-        <a class="btn btn--primary" href="/investors#request">Request investor materials</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="room room--alt" id="contact" aria-labelledby="contact-title">
+  <section class="room" id="contact" aria-labelledby="contact-title">
     <div class="suite suite--flagship">
       <p class="kicker">Contact</p>
       <h2 class="suite-title reveal" id="contact-title">Reach the person doing the work.</h2>
@@ -251,13 +179,6 @@ import Base from '../layouts/Base.astro';
         </div>
 
         <div class="contact__directory">
-          <div class="contact__col">
-            <h3>Investors</h3>
-            <ul>
-              <li><a href="/investors#request">Request materials</a></li>
-              <li><a href="mailto:info@intellmeai.com?subject=Investor%20materials">info@intellmeai.com</a></li>
-            </ul>
-          </div>
           <div class="contact__col">
             <h3>Support</h3>
             <ul>
