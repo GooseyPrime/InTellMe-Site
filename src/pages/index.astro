@@ -30,10 +30,11 @@ import Base from '../layouts/Base.astro';
   <section class="room" id="work" aria-labelledby="work-title">
     <div class="suite suite--flagship">
       <p class="kicker">Work</p>
-      <h2 class="suite-title reveal" id="work-title">Live products and the science behind them.</h2>
-      <p class="lede reveal" style="margin-top:22px;max-width:66ch">Each one has its own site. This page is the index.</p>
+      <h2 class="suite-title reveal" id="work-title">The research, and the products built alongside it.</h2>
+      <p class="lede reveal" style="margin-top:22px;max-width:66ch">Each one has its own site. This page is the index. The research is what the company is for; the products are where the practice of building and shipping gets exercised.</p>
 
-      <div class="rooms" style="margin-top:48px">
+      <h3 class="group-title reveal" id="research-title">Research</h3>
+      <div class="rooms" style="margin-top:28px" aria-labelledby="research-title">
         <article class="product reveal">
           <div class="product__meta">
             <h3 class="product__mark--typeset" style="margin:0">Lane Vector</h3>
@@ -42,7 +43,7 @@ import Base from '../layouts/Base.astro';
           <div class="product__action">
             <a class="btn btn--tertiary" href="https://www.lanevector.com" rel="noopener">Open Lane Vector <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
-        <p class="product__body"><a href="https://www.lanevector.com/applications/seo">Explore LaneVector SEO</a> · <a href="https://www.lanevector.com/publications">Read the research papers</a></p>
+        <p class="product__body"><a href="https://www.lanevector.com/publications">Read the research papers</a> · <a href="https://www.lanevector.com/applications/seo">Explore LaneVector SEO</a></p>
         </article>
 
         <article class="product reveal">
@@ -65,7 +66,11 @@ import Base from '../layouts/Base.astro';
             <a class="btn btn--tertiary" href="https://www.researchone.io/" rel="noopener">Open ResearchOne <span class="arrow" aria-hidden="true">&#8594;</span></a>
           </div>
         </article>
+      </div>
 
+      <h3 class="group-title reveal" id="products-title" style="margin-top:64px">Products</h3>
+      <p class="progress-note reveal">Pardon our progress: some of these sites are still being debugged. If something does not work, write to <a href="mailto:support@intellmeai.com">support@intellmeai.com</a> with the site, the page, what you did, what you expected, and a screenshot if you have one. Every message is read.</p>
+      <div class="rooms" style="margin-top:28px" aria-labelledby="products-title">
         <article class="product reveal">
           <img class="product__lockup" src="/assets/logos/savr.png"
                srcset="/assets/logos/savr.png 1x, /assets/logos/savr@2x.png 2x, /assets/logos/savr@3x.png 3x"
@@ -149,7 +154,7 @@ import Base from '../layouts/Base.astro';
       <div class="founder reveal">
         <p class="lede">InTellMe is an independent research and software company founded and operated by Michael Brandon Lane, a chemical engineer and chemist based in Johnson City, Tennessee.</p>
 
-        <p>Before InTellMe, Lane worked at Celgard on lithium-ion battery separator and coating technology, including the development and scale-up of coated separator systems for high-volume manufacturing. He is a named inventor on multiple Celgard patents covering coated battery separators, including <a href="https://patents.google.com/patent/US11949124B2/en" rel="noopener">U.S. Patent 11,949,124</a>.</p>
+        <p>Before InTellMe, Lane worked at Celgard on lithium-ion battery separator and coating technology, including the development and scale-up of coated separator systems for high-volume manufacturing. He is a named inventor on multiple Celgard patents covering coated battery separators, including <a href="https://patents.google.com/patent/US11949124B2/en" rel="noopener">U.S. Patent 11,949,124</a> (WO 2019/143483).</p>
 
         <p>That work shaped how he builds software: every number should trace back to a measurement, uncertainty should be stated out loud, and conclusions should change when the data does.</p>
 
