@@ -50,7 +50,7 @@ with TemporaryDirectory() as temp_dir:
     mark = mark.resize((round(mark.width / 4), MARK_H), Image.LANCZOS)
     x, y = 84, 74
     card.paste(mark, (x, y), mark)
-    d.text((x + mark.width + 18, y + MARK_H / 2), "InTellMe", font=nav,
+    d.text((x + mark.width + 18, y + MARK_H / 2), "InTellMe AI", font=nav,
            fill=IVORY, anchor="lm")
 
     d.text((84, 268), "AI decisions should be traceable", font=display, fill=IVORY, anchor="ls")
