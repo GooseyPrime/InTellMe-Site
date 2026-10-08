@@ -26,7 +26,7 @@ def mark(uid, x=0.0, y=0.0, stroke=SW):
 def mark_svg():
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
-        f'width="{W}" height="{H}" role="img" aria-label="InTellMe">\n  '
+        f'width="{W}" height="{H}" role="img" aria-label="InTellMe AI">\n  '
         + mark("im-lens") + "\n</svg>\n"
     )
 
@@ -35,7 +35,7 @@ def icon_svg(stroke=SW):
     k = IW / W
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {S:g} {S:g}" '
-        f'width="{S:g}" height="{S:g}" role="img" aria-label="InTellMe">\n'
+        f'width="{S:g}" height="{S:g}" role="img" aria-label="InTellMe AI">\n'
         f'  <rect width="{S:g}" height="{S:g}" rx="26" fill="{OBSIDIAN}"/>\n'
         f'  <g transform="translate({(S-IW)/2:g},{(S-H*k)/2:.4g}) scale({k:.6g})">\n  '
         + mark("ic-lens", stroke=stroke) + "\n  </g>\n</svg>\n"
