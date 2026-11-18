@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // The only JavaScript shipped is a small progressive-enhancement module;
 // every route renders complete content with JS disabled.
 export default defineConfig({
-  site: 'https://www.intellmeai.com',
+  site: 'https://www.intellmesi.com',
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file', inlineStylesheets: 'always' },

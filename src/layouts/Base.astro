@@ -14,7 +14,7 @@ interface Props {
   noindex?: boolean;
 }
 const { title, description, path, noindex = false } = Astro.props;
-const site = 'https://www.intellmeai.com';
+const site = 'https://www.intellmesi.com';
 const canonical = `${site}${path}`;
 ---
 <!doctype html>
@@ -34,7 +34,7 @@ const canonical = `${site}${path}`;
     <meta name="theme-color" content="#0C0B0A" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="InTellMe AI" />
+    <meta property="og:site_name" content="InTellMe" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
